@@ -6,9 +6,9 @@
 </head>
 <body data-plugin-page-transition>
 <div class="body">
-    @include('frontend.includes.navbar')
+    @include('frontend.includes.header')
     @yield('front')
-{{--    @include('frontend.includes.footer')--}}
+    @include('frontend.includes.footer')
     @include('sweetalert::alert')
     @include('frontend.includes.scripts')
 </div>

@@ -86,7 +86,7 @@ Route::resource('/partner',App\Http\Controllers\Backend\PartnerController::class
     });
 });
 Route::fallback(function () {
-    return view('backend.errors.404');
+//    return view('backend.errors.404');
 });
 //Route::get();
 Route::group(['name' => 'auth'], function () {

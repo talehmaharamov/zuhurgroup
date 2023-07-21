@@ -37,7 +37,7 @@ class SliderController extends Controller
                 $sliderOrder = Slider::all()->last()->order + 1;
             }
             $slider = new Slider();
-            $slider->photo = video_upload( $request->file('photo'));
+            $slider->photo = upload('slider', $request->file('photo'));
             $slider->alt = $request->alt;
             $slider->order = $sliderOrder;
             $slider->save();
@@ -67,7 +67,7 @@ class SliderController extends Controller
                     if (file_exists($slider->photo)) {
                         unlink(public_path($slider->photo));
                     }
-                    $slider->photo = video_upload( $request->file('photo'));
+                    $slider->photo = video_upload($request->file('photo'));
                 }
                 foreach (active_langs() as $lang) {
                     $slider->translate($lang->code)->title = $request->title[$lang->code];

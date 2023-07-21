@@ -39,13 +39,13 @@
                                             </div>
                                         @endforeach
                                         <div class="mb-3">
-                                            <label>@lang('backend.video') <span class="text-danger">*</span></label>
+                                            <label>@lang('backend.photo') <span class="text-danger">*</span></label>
                                             <input type="file" name="photo" class="form-control" required=""
-                                                   id="validationCustom" accept="video/*" >
-                                            {!! validation_response('backend.video') !!}
+                                                   id="validationCustom" accept="video/*">
+                                            {!! validation_response('backend.photo') !!}
                                         </div>
                                         <div class="mb-3">
-                                            <label>@lang('backend.alt') <span class="text-danger">*</span></label>
+                                            <label>@lang('backend.alt')</label>
                                             <input type="text" name="alt" class="form-control" id="validationCustom"
                                                    placeholder="@lang('backend.alt')">
                                         </div>
