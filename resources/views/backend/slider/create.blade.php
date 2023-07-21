@@ -41,7 +41,7 @@
                                         <div class="mb-3">
                                             <label>@lang('backend.photo') <span class="text-danger">*</span></label>
                                             <input type="file" name="photo" class="form-control" required=""
-                                                   id="validationCustom" accept="video/*">
+                                                   id="validationCustom" accept="image/*">
                                             {!! validation_response('backend.photo') !!}
                                         </div>
                                         <div class="mb-3">

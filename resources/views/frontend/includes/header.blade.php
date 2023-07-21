@@ -43,56 +43,21 @@
                 <div class="col-lg-10 col-md-8 col-6 d-flex justify-content-end position-static">
                     <nav class="main-menu">
                         <ul>
-                            <li class="active"><a href="{{ route('frontend.index') }}"><span>Home</span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{ route('frontend.index') }}">Construction Company</a></li>
-                                    <li><a href="index-2.html">Construction Corporate</a></li>
-                                    <li><a href="index-3.html">Construction Services</a></li>
-                                    <li><a href="index-4.html">Portfolio Slide</a></li>
-                                    <li><a href="index-5.html">Architecture Agency</a></li>
-                                    <li><a href="index-6.html">Renovation</a></li>
-                                </ul>
-                            </li>
-                            <li class="position-static"><a href="#"><span>Pages</span></a>
+                            <li class="active"><a href="{{ route('frontend.index') }}"><p>Home</p></a></li>
+                            <li class="position-static"><a href="#"><span>@lang('backend.categories')</span></a>
                                 <ul class="mega-menu four-column">
-                                    <li><a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">Services classic</a></li>
-                                            <li><a href="services-2.html">Services modern</a></li>
-                                            <li><a href="services-3.html">Services slide</a></li>
-                                            <li><a href="services-details-left.html">Service detail left sidebar</a></li>
-                                            <li><a href="services-details-right.html">Service detail right sidebar</a></li>
-                                            <li><a href="services-details-nosidebar.html">Service detail no sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages 01</a>
-                                        <ul>
-                                            <li><a href="about.html">About us 01</a></li>
-                                            <li><a href="about-2.html">About us 02</a></li>
-                                            <li><a href="contact.html">Contact us</a></li>
-                                            <li><a href="contact-2.html">Contact us 02</a></li>
-                                            <li><a href="contact-3.html">Contact us 03</a></li>
-                                            <li><a href="faq.html">F.A.Qs</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages 02</a>
-                                        <ul>
-                                            <li><a href="maintenance.html">Maintenance</a></li>
-                                            <li><a href="coming-soon.html">Coming soon</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                            <li><a href="history.html">History</a></li>
-                                            <li><a href="achievements.html">Achievements</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages 03</a>
-                                        <ul>
-                                            <li><a href="core-value.html">Core value</a></li>
-                                            <li><a href="career.html">Career</a></li>
-                                            <li><a href="our-partners.html">Our partners</a></li>
-                                            <li><a href="our-team.html">Our team</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                        </ul>
-                                    </li>
+                                    @foreach($mainCategories as $mc)
+                                        <li>
+                                            <a>{{ $mc->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</a>
+                                            <ul>
+                                                @foreach($mc->subcategories as $mcs)
+                                                    <li>
+                                                        <a href="{{ route('frontend.selectedCategory',$mcs->slug) }}">{{ $mcs->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li><a href="portfolio-boxed-grid.html"><span>Portfolio</span></a>
@@ -158,7 +123,8 @@
                                     </li>
                                     <li><a href="#">Elements 03</a>
                                         <ul>
-                                            <li><a href="element-info-boxes-with-images.html">Info boxes with images</a></li>
+                                            <li><a href="element-info-boxes-with-images.html">Info boxes with images</a>
+                                            </li>
                                             <li><a href="element-list.html">Lists</a></li>
                                             <li><a href="element-popup-video.html">Popup video</a></li>
                                             <li><a href="element-pricing-tables.html">Pricing tables</a></li>
@@ -223,7 +189,8 @@
                                             </div>
                                             <div class="content">
                                                 <div class="inner">
-                                                    <h4><a href="single-product.html">Crystal Glass Globe Desk Lamp</a></h4>
+                                                    <h4><a href="single-product.html">Crystal Glass Globe Desk Lamp</a>
+                                                    </h4>
                                                     <div class="quatity">
                                                         <span>1 ×</span>
                                                         <span>39.00</span>
@@ -249,7 +216,8 @@
                                                         <span>39.00</span>
                                                     </div>
                                                 </div>
-                                                <button class="delete-btn brook-transition"><i class="fa fa-close"></i></button>
+                                                <button class="delete-btn brook-transition"><i class="fa fa-close"></i>
+                                                </button>
                                             </div>
                                         </li>
                                     </ul>

@@ -10,14 +10,6 @@
                     </a>
                 </li>
                 <li class="menu-title">@lang('backend.site-setting')</li>
-                @can('content index')
-                    <li>
-                        <a href="{{ route('backend.content.index') }}" class="waves-effect">
-                            <i class="fas fa-file"></i>
-                            <span>@lang('backend.content')</span>
-                        </a>
-                    </li>
-                @endcan
                 @can('slider index')
                     <li>
                         <a href="{{ route('backend.slider.index') }}" class="waves-effect">
@@ -26,6 +18,23 @@
                         </a>
                     </li>
                 @endcan
+                @can('content index')
+                    <li>
+                        <a href="{{ route('backend.content.index') }}" class="waves-effect">
+                            <i class="fas fa-file"></i>
+                            <span>@lang('backend.content')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('categories index')
+                    <li>
+                        <a href="{{ route('backend.categories.index') }}" class="waves-effect">
+                            <i class="fas fa-bars"></i>
+                            <span>@lang('backend.categories')</span>
+                        </a>
+                    </li>
+                @endcan
+
                 @can('catalog index')
                     <li>
                         <a href="{{ route('backend.catalog.index') }}" class="waves-effect">

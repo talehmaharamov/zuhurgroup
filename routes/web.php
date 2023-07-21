@@ -9,11 +9,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLanguage'], function () {
     Route::get('contact-us', function () {
-        $sliders = Slider::where('page', 'contact')->where('status', 1)->get();
-        $sliderTitle = settings('sliderTitleContact_' . app()->getLocale());
-        $sliderDescription = settings('sliderDescriptionContact_' . app()->getLocale());
-        return view('frontend.contact-us.index',get_defined_vars());
     })->name('contact-us-page');
+    Route::get('/c/{slug}', [\App\Http\Controllers\Frontend\CategoryController::class, 'show'])->name('selectedCategory');
     Route::get('/change-language/{dil}', [LChangeLan::class, 'frontLanguage'])->name('frontLanguage');
     Route::get('create-order', [FHome::class, 'createOrder'])->name('createOrder');
     Route::post('/contact-us/send-message', [FHome::class, 'sendMessage'])->name('sendMessage');

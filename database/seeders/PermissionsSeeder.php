@@ -14,6 +14,7 @@ class PermissionsSeeder extends Seeder
             'about',
             'slider',
             'categories',
+            'content',
             'languages',
             'settings',
             'seo-tags',

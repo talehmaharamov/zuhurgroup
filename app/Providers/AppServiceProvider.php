@@ -19,13 +19,18 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
+
 //        $currentLanguage = SiteLanguage::where('code', app()->getLocale())->first();
 //        $languages = DB::table('site_languages')->get();
 //        $tags = MetaTag::where('status', 1)->get();
 //        $description = MetaTag::where('attribute_name', 'description')->first();
 //        $settings = Setting::where('status', 1)->get();
 //        $categories = Category::where('status', 1)->get();
-//        view()->share([
+        $generalCategories = Category::with('subcategories.subcategories')->get();
+        $mainCategories = Category::where('parent_id', null)->with('subcategories.subcategories')->get();
+        view()->share([
+            'generalCategories' => $generalCategories,
+            'mainCategories' => $mainCategories,
 //            'currentLanguage' => $currentLanguage,
 //            'languages' => $languages,
 //            'locale' => app()->getLocale(),
@@ -33,6 +38,6 @@ class AppServiceProvider extends ServiceProvider
 //            'categories' => $categories,
 //            'tags' => $tags,
 //            'tagDescription' => $description
-//        ]);
+        ]);
     }
 }
