@@ -27,6 +27,11 @@
                                         <input name="link" type="url"
                                                class="form-control" value="{{ $partner->link }}">
                                     </div>
+                                    <div class="mb-3">
+                                        <label>@lang('backend.alt')</label>
+                                        <input name="alt" type="text"
+                                               class="form-control" value="{{ $partner->alt }}">
+                                    </div>
                                 </div>
                                 @include('backend.templates.components.buttons')
                             </form>

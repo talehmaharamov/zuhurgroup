@@ -25,7 +25,8 @@
                                                         <label>@lang('backend.title') <span class="text-danger">*</span></label>
                                                         <input name="title[{{ $lan->code }}]" type="text"
                                                                class="form-control"
-                                                               required="" value="{{ $slider->translate($lan->code)->title ?? __('backend.translation-not-found') }}">
+                                                               required=""
+                                                               value="{{ $slider->translate($lan->code)->title ?? __('backend.translation-not-found') }}">
                                                         {!! validation_response('backend.title') !!}
                                                     </div>
                                                     <div class="mb-3">
@@ -39,21 +40,19 @@
                                                 </div>
                                             </div>
                                         @endforeach
-                                            <div class="mb-3">
-                                                <label>@lang('backend.video') <span class="text-danger">*</span></label>
-                                                <input type="file" name="photo" class="form-control mb-3" required=""
-                                                       id="validationCustom" accept="video/*" >
-                                                {!! validation_response('backend.video') !!}
-                                                @if(file_exists($slider->photo))
-                                                    <video width="100%" controls>
-                                                        <source src="{{ asset($slider->photo) }}">
-                                                    </video>
-                                                @endif
-                                            </div>
-                                            <div class="mb-3">
-                                                <label>@lang('backend.alt') <span class="text-danger">*</span></label>
-                                                <input type="text" name="alt" class="form-control" id="validationCustom"  value="{{ $slider->alt }}">
-                                            </div>
+                                        <div class="mb-3">
+                                            <label>@lang('backend.photo') <span class="text-danger">*</span></label>
+                                            <input type="file" name="photo" class="form-control mb-3"
+                                                   id="validationCustom" accept="image/*">
+                                            @if(file_exists($slider->photo))
+                                                <img width="100%" src="{{ asset($slider->photo) }}">
+                                            @endif
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>@lang('backend.alt')</label>
+                                            <input type="text" name="alt" class="form-control" id="validationCustom"
+                                                   value="{{ $slider->alt }}">
+                                        </div>
                                     </div>
                                 </div>
                                 @include('backend.templates.components.buttons')

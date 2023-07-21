@@ -14,12 +14,14 @@ class Category extends Model implements TranslatableContract
     public $translatedAttributes = ['name'];
     protected $fillable = ['slug'];
 
-
-    public function alt()
+    public function parent(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasMany(AltCategory::class);
+        return $this->belongsTo(Category::class, 'parent_id');
     }
-
+    public function subcategories(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Category::class, 'parent_id');
+    }
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()->logOnly(['slug']);

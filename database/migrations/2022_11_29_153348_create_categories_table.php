@@ -7,17 +7,17 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('partners', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->longText('photo');
-            $table->longText('alt')->nullable();
-            $table->longText('link')->nullable();
+            $table->string('slug', 30);
+            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('partners');
+        Schema::dropIfExists('categories');
     }
 };

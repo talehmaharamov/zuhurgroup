@@ -19,12 +19,12 @@ Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
     Route::post('change-alt-category', [App\Http\Controllers\Backend\ContentController::class, 'changeAltCategory'])->name('changeAltCategory');
     Route::get('delete/photo/{model}/{id}', [App\Http\Controllers\Backend\HomeController::class, 'deletePhoto'])->name('deletePhoto');
     Route::group(['name' => 'status'], function () {
-Route::get('partner/{id}/change-status',[App\Http\Controllers\Backend\PartnerController::class,'status'])->name('partnerStatus');
-
+        Route::get('partner/{id}/change-status', [App\Http\Controllers\Backend\PartnerController::class, 'status'])->name('partnerStatus');
         Route::get('product/{id}/change-status', [App\Http\Controllers\Backend\ProductController::class, 'status'])->name('productStatus');
         Route::get('blog/{id}/change-status', [App\Http\Controllers\Backend\BlogController::class, 'status'])->name('blogStatus');
         Route::get('portfolio/{id}/change-status', [App\Http\Controllers\Backend\PortfolioController::class, 'status'])->name('portfolioStatus');
         Route::get('service/{id}/change-status', [App\Http\Controllers\Backend\ServiceController::class, 'status'])->name('serviceStatus');
+        Route::get('service/{id}/change-status', [App\Http\Controllers\Backend\CategoryController::class, 'status'])->name('categoryStatus');
         Route::get('media/{id}/change-status', [App\Http\Controllers\Backend\MediaController::class, 'status'])->name('mediaStatus');
         Route::get('catalog/{id}/change-status', [App\Http\Controllers\Backend\CatalogController::class, 'status'])->name('catalogStatus');
         Route::get('mail/{id}/change-status', [App\Http\Controllers\Backend\MailController::class, 'status'])->name('mailStatus');
@@ -39,7 +39,7 @@ Route::get('partner/{id}/change-status',[App\Http\Controllers\Backend\PartnerCon
         })->name('permissionsStatus');
     });
     Route::group(['name' => 'delete'], function () {
-Route::get('partner/{id}/delete',[App\Http\Controllers\Backend\PartnerController::class,'delete'])->name('partnerDelete');
+        Route::get('partner/{id}/delete', [App\Http\Controllers\Backend\PartnerController::class, 'delete'])->name('partnerDelete');
 
         Route::get('product/{id}/delete', [App\Http\Controllers\Backend\ProductController::class, 'delete'])->name('productDelete');
         Route::get('blog/{id}/delete', [App\Http\Controllers\Backend\BlogController::class, 'delete'])->name('blogDelete');
@@ -50,6 +50,7 @@ Route::get('partner/{id}/delete',[App\Http\Controllers\Backend\PartnerController
         Route::get('mail/{id}/delete', [App\Http\Controllers\Backend\MailController::class, 'delete'])->name('mailDelete');
         Route::get('about/{id}/delete', [App\Http\Controllers\Backend\AboutController::class, 'delete'])->name('aboutDelete');
         Route::get('content/{id}/delete', [App\Http\Controllers\Backend\ContentController::class, 'delete'])->name('contentDelete');
+        Route::get('content/{id}/delete', [App\Http\Controllers\Backend\CategoryController::class, 'delete'])->name('categoryDelete');
         Route::get('content/photo/{id}/delete', [App\Http\Controllers\Backend\ContentController::class, 'deletePhoto'])->name('contentPhotoDelete');
         Route::get('/site-languages/{id}/delete', [App\Http\Controllers\Backend\SiteLanguageController::class, 'delSiteLang'])->name('site-languagesDelete');
         Route::get('/contact-us/{id}/delete', [App\Http\Controllers\Backend\ContactController::class, 'delContactUS'])->name('delContactUS');
@@ -63,8 +64,8 @@ Route::get('partner/{id}/delete',[App\Http\Controllers\Backend\PartnerController
         Route::get('/newsletter/{id}/delete', [App\Http\Controllers\Backend\NewsletterController::class, 'delNewsletter'])->name('delNewsletter');
     });
     Route::group(['name' => 'resource'], function () {
-Route::resource('/partner',App\Http\Controllers\Backend\PartnerController::class);
-
+        Route::resource('/partner', App\Http\Controllers\Backend\PartnerController::class);
+        Route::resource('/categories', App\Http\Controllers\Backend\CategoryController::class);
         Route::resource('/product', App\Http\Controllers\Backend\ProductController::class);
         Route::resource('/blog', App\Http\Controllers\Backend\BlogController::class);
         Route::resource('/portfolio', App\Http\Controllers\Backend\PortfolioController::class);

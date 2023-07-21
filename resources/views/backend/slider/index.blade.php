@@ -42,10 +42,7 @@
                                 <tr>
                                     <td class="text-center">{{ $slider->id }}</td>
                                     <td class="text-center">
-                                        <video width="200"
-                                               height="100" controls>
-                                            <source src="{{ asset($slider->photo) }}">
-                                        </video>
+                                        <img src="{{ asset($slider->photo) }}" style="width: 120px;height: 80px">
                                     </td>
                                     @if(count(\App\Models\Slider::all()) >1)
                                         <td class="text-center">

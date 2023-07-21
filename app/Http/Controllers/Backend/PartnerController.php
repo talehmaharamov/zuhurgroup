@@ -32,6 +32,7 @@ class PartnerController extends Controller
         try {
             $partner = new Partner();
             $partner->photo = upload('partner', $request->file('photo'));
+            $partner->alt = $request->alt;
             $partner->link = $request->link;
             $partner->save();
             alert()->success(__('messages.success'));
@@ -61,6 +62,7 @@ class PartnerController extends Controller
                     }
                     $partner->photo = upload('partner', $request->file('photo'));
                 }
+                $partner->alt = $request->alt;
                 $partner->link = $request->link;
                 $partner->save();
             });
