@@ -2,7 +2,7 @@
     <div data-simplebar class="h-100" style="overflow-y: auto;">
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
-{{--                {{ creation('Partner','Partner',true,false) }}--}}
+{{--                {{ creation('Faq','Faq',true,false) }}--}}
                 <li>
                     <a href="{{ route('backend.dashboard') }}" class="waves-effect">
                         <i class="ri-home-4-fill"></i>
@@ -34,7 +34,14 @@
                         </a>
                     </li>
                 @endcan
-
+                @can('faq index')
+                    <li>
+                        <a href="{{ route('backend.faq.index') }}" class="waves-effect">
+                            <i class="fas fa-question"></i>
+                            <span>@lang('backend.faq')</span>
+                        </a>
+                    </li>
+                @endcan
                 @can('catalog index')
                     <li>
                         <a href="{{ route('backend.catalog.index') }}" class="waves-effect">
