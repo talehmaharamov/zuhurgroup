@@ -1,4 +1,6 @@
-<?php return array (
+<?php
+
+return array (
   'about' => 'Haqqımızda',
   'actions' => 'Hərəkətlər',
   'active' => 'Aktiv',
@@ -85,6 +87,7 @@
   'etibar' => '',
   'event' => 'Event',
   'experience' => 'Təcrübə',
+  'faq' => 'Tez tez verilən suallar',
   'follow-us' => 'Bizi izləyin',
   'forgot-password' => 'Şifrəni unutmusunuz?',
   'front_photo' => 'Ön şəkil',
@@ -142,6 +145,7 @@
   'our-team' => 'Komandamız',
   'page' => 'Səhifə',
   'pages' => 'Səhifələr',
+  'parent' => '',
   'partner' => 'Partnyrolar',
   'password' => 'Şifrə',
   'pay-to-card' => 'Kartla ödəniş',
@@ -231,5 +235,4 @@
   'your-item-message' => 'Elanınız nəzərdən keçirilməsini gözləyir.Elanı redaktə etmək və silmək üçün elanın nömrəsini yadda saxlayın.',
   'your-item-number' => 'Elanınızın nömrəsi',
   'zuhur' => '',
-  'parent' => '',
 );

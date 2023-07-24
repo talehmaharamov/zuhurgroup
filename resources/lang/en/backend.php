@@ -1,4 +1,6 @@
-<?php return array (
+<?php
+
+return array (
   'about' => 'About',
   'actions' => 'Actions',
   'active' => 'Active',
@@ -85,6 +87,7 @@
   'etibar' => '',
   'event' => 'Event',
   'experience' => 'Experience',
+  'faq' => 'Frequently asked questions',
   'follow-us' => 'Follow Us',
   'forgot-password' => 'Forgot Password?',
   'front_photo' => 'Front Photo',
@@ -142,6 +145,7 @@
   'our-team' => 'Our Team',
   'page' => 'Page',
   'pages' => 'Pages',
+  'parent' => '',
   'partner' => 'Partners',
   'password' => 'Password',
   'pay-to-card' => 'Pay with Card',
@@ -231,5 +235,4 @@
   'your-item-message' => 'Your item is awaiting review. Please save the item number to edit or delete the listing.',
   'your-item-number' => 'Your item number',
   'zuhur' => '',
-  'parent' => '',
 );

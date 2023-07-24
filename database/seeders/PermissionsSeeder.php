@@ -8,7 +8,7 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionsSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         $permissions = [
             'about',
@@ -30,6 +30,7 @@ class PermissionsSeeder extends Seeder
             'portfolio',
             'service',
             'partner',
+            'faq',
         ];
         foreach ($permissions as $permission) {
             add_permission($permission);
