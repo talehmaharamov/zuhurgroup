@@ -13,6 +13,9 @@ return new class extends Migration {
             $table->string('locale')->index();
             $table->longText('name');
             $table->longText('content');
+            $table->longText('meta_title')->nullable();
+            $table->longText('meta_description')->nullable();
+            $table->longText('alt')->nullable();
             $table->unique(['content_id', 'locale']);
             $table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
             $table->timestamps();

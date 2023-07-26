@@ -11,8 +11,7 @@ class ContentTranslation extends Model
 {
     use LogsActivity;
     public $timestamps = false;
-    protected $fillable = ['name','description'];
-
+    protected $fillable = ['name','description','meta_title','meta_description','alt'];
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()->logAll();

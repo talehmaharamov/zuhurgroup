@@ -11,12 +11,15 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model implements TranslatableContract
 {
     use Translatable, LogsActivity;
-    public $translatedAttributes = ['name'];
+    public array $translatedAttributes = ['name'];
     protected $fillable = ['slug'];
-
     public function parent(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Category::class, 'parent_id');
+    }
+    public function content(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Content::class);
     }
     public function subcategories(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\CRUDHelper;
+use App\Models\Category;
 use App\Models\ContentPhotos;
 use App\Models\ContentTranslation;
 use Exception;
@@ -30,6 +31,7 @@ class ContentController extends Controller
     {
         check_permission('content create');
         try {
+            $category = Category::find($request->category);
             $content = new Content();
             if ($request->hasFile('pdf')) {
                 $content->pdf = pdf_upload($request->file('pdf'));
@@ -37,16 +39,16 @@ class ContentController extends Controller
             if ($request->hasFile('photo')) {
                 $content->photo = upload('content', $request->file('photo'));
             }
-            $content->category_id = $request->category;
-            $content->alt_id = $request->altCategory;
-            $content->sub_id = $request->subCategory;
-            $content->save();
+            $category->content()->save($content);
             foreach (active_langs() as $lang) {
                 $contentTranslation = new ContentTranslation();
                 $contentTranslation->locale = $lang->code;
                 $contentTranslation->content_id = $content->id;
                 $contentTranslation->name = $request->name[$lang->code];
                 $contentTranslation->content = $request->content1[$lang->code];
+                $contentTranslation->meta_title = $request->meta_title[$lang->code];
+                $contentTranslation->meta_description = $request->meta_description[$lang->code];
+                $contentTranslation->alt = $request->alt[$lang->code];
                 $contentTranslation->save();
             }
             if ($request->hasFile('photos')) {
@@ -78,8 +80,6 @@ class ContentController extends Controller
             $content = Content::where('id', $id)->with('photos')->first();
             DB::transaction(function () use ($request, $content) {
                 $content->category_id = $request->category;
-                $content->alt_id = $request->altCategory;
-                $content->sub_id = $request->subCategory;
                 if ($request->hasFile('pdf')) {
                     if (file_exists($content->pdf)) {
                         unlink(public_path($content->pdf));
@@ -102,6 +102,9 @@ class ContentController extends Controller
                 foreach (active_langs() as $lang) {
                     $content->translate($lang->code)->name = $request->name[$lang->code];
                     $content->translate($lang->code)->content = $request->content1[$lang->code];
+                    $content->meta_title = $request->meta_title[$lang->code];
+                    $content->meta_description = $request->meta_description[$lang->code];
+                    $content->alt = $request->alt[$lang->code];
                 }
                 $content->save();
             });

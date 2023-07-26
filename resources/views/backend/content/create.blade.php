@@ -40,17 +40,50 @@
                                                                   placeholder="@lang('backend.content')"></textarea>
                                                         {!! validation_response('backend.content') !!}
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.title')(Meta)</label>
+                                                        <input name="meta_title[{{ $lan->code }}]" type="text"
+                                                               class="form-control"
+                                                               required="" placeholder="@lang('backend.title')(Meta)">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.description')(Meta)</label>
+                                                        <textarea name="meta_description[{{ $lan->code }}]" type="text"
+                                                               class="form-control" id="elm{{$lan->code}}2"
+                                                               required="" rows="5"></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.alt')</label>
+                                                        <textarea name="alt[{{ $lan->code }}]" type="text"
+                                                                  class="form-control"
+                                                                  required="" placeholder="@lang('backend.alt')" rows="5"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach
-                                        @livewire('content-category')
+                                        <div class="mb-3">
+                                            <label>@lang('backend.categories')</label>
+                                            <select class="form-control" name="category">
+                                                @foreach($mainCategories as $ctgry)
+                                                    <optgroup
+                                                        label="{{ $ctgry->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}">
+                                                        @foreach($ctgry->subcategories as $subCat)
+                                                            <option
+                                                                value="{{ $subCat->id }}">{{ $subCat->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</option>
+                                                        @endforeach
+                                                    </optgroup>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        {{--                                        @livewire('content-category')--}}
                                         <div class="mb-3">
                                             <label>PDF</label>
                                             <input name="pdf" type="file" class="form-control"
                                                    accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf">
                                         </div>
                                         <div class="mb-3">
-                                            <label>@lang('backend.photo')</label>
+                                            <label>@lang('backend.photo') <span
+                                                    class="text-danger">*</span></label>
                                             <input name="photo" type="file" class="form-control">
                                         </div>
                                         <div class="mb-3">
