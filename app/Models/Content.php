@@ -13,14 +13,17 @@ class Content extends Model implements TranslatableContract
 {
     use Translatable, LogsActivity;
 
-    public $translatedAttributes = ['name', 'content'];
+    public array $translatedAttributes = ['name', 'content', 'meta_title', 'meta_description', 'alt'];
     protected $guarded = ['slug', 'view', 'photo'];
 
-    public function photos()
+    public function photos(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(ContentPhotos::class);
     }
-
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()->logAll();

@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             MetaSeeder::class,
             SettingSeeder::class,
             AdminSeeder::class,
-//            CategorySeeder::class,
+            CategorySeeder::class,
         ]);
     }
 }

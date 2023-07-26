@@ -16,7 +16,7 @@ Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLangua
     Route::post('/contact-us/send-message', [FHome::class, 'sendMessage'])->name('sendMessage');
     Route::post('/order/new', [FHome::class, 'newOrder'])->name('newOrder');
     Route::get('/', [FHome::class, 'index'])->name('index');
-    Route::get('/about', [FAbout::class, 'index'])->name('about');
+//    Route::get('/about', [FAbout::class, 'index'])->name('about');
     Route::get('/categories/{slug}', [FCategory::class, 'index'])->name('selectedCategory');
     Route::post('/search', [FHome::class, 'search'])->name('search');
     Route::post('/newsletter-add-new', [FHome::class, 'newsletter'])->name('newsletter');

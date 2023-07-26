@@ -38,25 +38,62 @@
                                                         <textarea name="content1[{{ $lan->code }}]"
                                                                   id="elm{{$lan->code}}1"
                                                                   class="form-control"
-                                                                  required=""
-                                                                  placeholder="@lang('backend.content')">{!! $content->translate($lan->code)->content ?? __('backend.translation-not-found') !!}</textarea>
+                                                                  required="">{!! $content->translate($lan->code)->content ?? __('backend.translation-not-found') !!}</textarea>
                                                         {!! validation_response('backend.content') !!}
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.title')(Meta)</label>
+                                                        <input name="meta_title[{{ $lan->code }}]" type="text"
+                                                               class="form-control"
+                                                               value="{{$content->translate($lan->code)->meta_title ?? __('backend.translation-not-found')}}">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.description')(Meta)</label>
+                                                        <textarea name="meta_description[{{ $lan->code }}]" type="text"
+                                                                  class="form-control" id="elm{{$lan->code}}2"
+                                                                  rows="5">{!! $content->translate($lan->code)->meta_description ?? __('backend.translation-not-found') !!}</textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.alt')</label>
+                                                        <textarea name="alt[{{ $lan->code }}]" type="text"
+                                                                  class="form-control"
+                                                                  rows="5">{{ $content->translate($lan->code)->alt ?? __('backend.translation-not-found') }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                         @endforeach
-                                        @livewire('content-category',['update' => $content->id])
                                         <div class="mb-3">
-                                            <label>PDF</label>
-                                            <input name="pdf" type="file" class="form-control"
-                                                   accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf">
+                                            <label>@lang('backend.categories')</label>
+                                            <select class="form-control" name="category">
+                                                @foreach($mainCategories as $ctgry)
+                                                    <optgroup
+                                                        label="{{ $ctgry->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}">
+                                                        @foreach($ctgry->subcategories as $subCat)
+                                                            <option
+                                                                value="{{ $subCat->id }}"
+                                                                @if($content->category_id == $subCat->id) selected @endif>{{ $subCat->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</option>
+                                                        @endforeach
+                                                    </optgroup>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="mb-3">
-                                            <label>@lang('backend.photo')</label>
-                                            <input name="photo" type="file" class="form-control">
+                                            <label>PDF</label>
+                                            <div class="d-flex align-items-center">
+                                                <input name="pdf" type="file" class="form-control "
+                                                       accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf">
+                                                @if(file_exists($content->pdf))
+                                                    <a style="margin-left: 20px" href="{{ asset($content->pdf) }}" class="btn btn-primary col-2"><i
+                                                            class="fas fa-download"></i> PDF @lang('backend.download')</a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>@lang('backend.photo') <span
+                                                    class="text-danger">*</span></label>
+                                            <input name="photo" type="file" class="form-control mb-2">
                                             @if(file_exists($content->photo))
-                                                <img src="{{ asset($content->photo) }}" class="form-control mt-2"
-                                                     style="width: 100%;max-height: 600px;">
+                                                <img src="{{ asset($content->photo) }}" class="form-control w-100">
                                             @endif
                                         </div>
                                         <div class="mb-3">
@@ -71,12 +108,15 @@
                                                         <div style="position:relative;" class="wraper col-2 m-3">
                                                             <img src="{{ asset($photo->photo) }}"
                                                                  style="height: 200px; width: 200px; object-fit: cover;">
-                                                            <a style="position: absolute; right:5px; top:5px" type="button" class="btn btn-danger" href="{{ route('backend.contentPhotoDelete',$photo->id) }}">X</a>
+                                                            <a style="position: absolute; right:5px; top:5px"
+                                                               type="button" class="btn btn-danger"
+                                                               href="{{ route('backend.contentPhotoDelete',$photo->id) }}">X</a>
                                                         </div>
                                                     @endforeach
                                                 </div>
                                             @endif
                                         </div>
+                                    </div>
                                 @include('backend.templates.components.buttons')
                             </form>
                         </div>
