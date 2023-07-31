@@ -21,6 +21,8 @@ class SettingSeeder extends Seeder
             ['name' => 'address_az', 'link' => 'Bakı ş. Yasamal r. Mirəli Seyidov 31/38'],
             ['name' => 'address_en', 'link' => 'Baku Yasamal r. Mirali Seyidov 31/38'],
             ['name' => 'address_ru', 'link' => 'Баку Ясамал р. Мирали Сеидов 31/38'],
+            ['name' => 'mail_receiver', 'link' => 'elmir_567@mail.ru'],
+
         ];
         foreach ($settings as $key => $setting) {
             $set = new Setting();

@@ -1,14 +1,14 @@
 <?php
 
 use App\Http\Controllers\Backend\LanguageController as LChangeLan;
-use App\Http\Controllers\Frontend\AboutController as FAbout;
 use App\Http\Controllers\Frontend\HomeController as FHome;
 use App\Http\Controllers\Frontend\CategoryController as FCategory;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLanguage'], function () {
-    Route::get('contact-us', function () {
+    Route::get('/contact-us', function () {
+        return view('frontend.contact-us.index');
     })->name('contact-us-page');
     Route::get('/c/{slug}', [\App\Http\Controllers\Frontend\CategoryController::class, 'show'])->name('selectedCategory');
     Route::get('/change-language/{dil}', [LChangeLan::class, 'frontLanguage'])->name('frontLanguage');

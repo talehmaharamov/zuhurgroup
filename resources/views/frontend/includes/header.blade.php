@@ -43,7 +43,7 @@
                 <div class="col-lg-10 col-md-8 col-6 d-flex justify-content-end position-static">
                     <nav class="main-menu">
                         <ul>
-                            <li class="active"><a href="{{ route('frontend.index') }}"><p>Home</p></a></li>
+                            <li class="active"><a href="{{ route('frontend.index') }}"><p>@lang('backend.home-page')</p></a></li>
                             <li class="position-static"><a href="#"><span>@lang('backend.categories')</span></a>
                                 <ul class="mega-menu four-column">
                                     @foreach($mainCategories as $mc)
@@ -140,19 +140,10 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="shop.html"><span>Shop</span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="shop-with-sidebar.html">Shop with sidebar</a></li>
-                                    <li><a href="shop-with-filter.html">Shop with filter</a></li>
-                                    <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="my-account.html">My account</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{ route('frontend.contact-us-page') }}"><p>@lang('backend.contact-us')</p></a></li>
                         </ul>
                     </nav>
+
                     <div class="header-cart">
                         <a class="mini-cart" href="#"><i class="fa fa-shopping-bag"></i><span>3</span></a>
                         <div class="shopping-cart cart-box">
