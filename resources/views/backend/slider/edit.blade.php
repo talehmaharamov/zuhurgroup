@@ -37,6 +37,11 @@
                                                                   name="description[{{$lan->code}}]">{!! $slider->translate($lan->code)->description ?? __('backend.translation-not-found') !!}</textarea>
                                                         {!! validation_response('backend.description') !!}
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.alt')</label>
+                                                        <textarea class="form-control" rows="7"
+                                                                  name="alt[{{$lan->code}}]">{{ $slider->translate($lan->code)->alt ?? __('backend.translation-not-found') }}</textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -47,11 +52,6 @@
                                             @if(file_exists($slider->photo))
                                                 <img width="100%" src="{{ asset($slider->photo) }}">
                                             @endif
-                                        </div>
-                                        <div class="mb-3">
-                                            <label>@lang('backend.alt')</label>
-                                            <input type="text" name="alt" class="form-control" id="validationCustom"
-                                                   value="{{ $slider->alt }}">
                                         </div>
                                     </div>
                                 </div>

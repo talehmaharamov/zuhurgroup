@@ -6,11 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Helpers\CRUDHelper;
 use App\Models\About;
 use App\Models\AboutTranslation;
-use App\Models\WhyGefen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Gate;
-use Symfony\Component\HttpFoundation\Response;
 
 class AboutController extends Controller
 {
@@ -41,6 +38,7 @@ class AboutController extends Controller
                 $translation->locale = $lang->code;
                 $translation->about_id = $about->id;
                 $translation->title = $request->title[$lang->code];
+                $translation->alt = $request->alt[$lang->code] ?? null;
                 $translation->description = $request->description[$lang->code];
                 $translation->save();
             }
@@ -72,6 +70,7 @@ class AboutController extends Controller
                 }
                 foreach (active_langs() as $lang) {
                     $about->translate($lang->code)->title = $request->title[$lang->code];
+                    $about->translate($lang->code)->alt = $request->alt[$lang->code] ?? null;
                     $about->translate($lang->code)->description = $request->description[$lang->code];
                 }
                 $about->save();

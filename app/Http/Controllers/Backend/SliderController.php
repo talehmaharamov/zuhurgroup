@@ -38,7 +38,6 @@ class SliderController extends Controller
             }
             $slider = new Slider();
             $slider->photo = upload('slider', $request->file('photo'));
-            $slider->alt = $request->alt;
             $slider->order = $sliderOrder;
             $slider->save();
             foreach (active_langs() as $lang) {
@@ -46,6 +45,7 @@ class SliderController extends Controller
                 $sliderTranslation->locale = $lang->code;
                 $sliderTranslation->slider_id = $slider->id;
                 $sliderTranslation->title = $request->title[$lang->code];
+                $sliderTranslation->alt = $request->alt[$lang->code] ?? null;
                 $sliderTranslation->description = $request->description[$lang->code];
                 $sliderTranslation->save();
             }
@@ -59,6 +59,7 @@ class SliderController extends Controller
 
     public function update(Request $request, $id)
     {
+
         check_permission('slider edit');
         try {
             $slider = Slider::find($id);
@@ -71,9 +72,9 @@ class SliderController extends Controller
                 }
                 foreach (active_langs() as $lang) {
                     $slider->translate($lang->code)->title = $request->title[$lang->code];
+                    $slider->translate($lang->code)->alt = $request->alt[$lang->code] ?? null;
                     $slider->translate($lang->code)->description = $request->description[$lang->code];
                 }
-                $slider->alt = $request->alt;
                 $slider->save();
             });
             alert()->success(__('messages.success'));

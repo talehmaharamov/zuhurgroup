@@ -15,6 +15,7 @@ return array (
   'ads-count' => 'Elan sayı',
   'age' => 'Yaş',
   'age-checker' => 'Yaşın yoxlanılması',
+  'all-right-reserved' => 'Bütün hüquqlar qorunur',
   'alt' => 'Alternativ',
   'alt-categories' => 'Alt Kateqoriyalar',
   'ap' => 'İdarə Paneli',
