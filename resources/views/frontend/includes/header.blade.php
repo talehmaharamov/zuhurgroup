@@ -1,3 +1,11 @@
+<div class="whats-float">
+    <a href="https://wa.me/{{ settings('whatsapp') }}"
+       target="_blank">
+        <i class="fab fa-whatsapp"></i><span>@lang('Whatsapp')<br><small>{{ settings('whatsapp') }}</small></span>
+    </a>
+</div>
+
+
 <header class="header header-transparent header-sticky d-none d-lg-block">
     <div class="header-top">
         <div class="container">
@@ -34,7 +42,7 @@
                 <div class="col-lg-10 col-md-8 col-6 d-flex justify-content-end position-static">
                     <nav class="main-menu">
                         <ul>
-                            <li class="active"><a href="{{ route('frontend.index') }}"><p>@lang('backend.home-page')</p>
+                            <li class="@if(\Illuminate\Support\Facades\Route::currentRouteName() == 'frontend.index') active @endif"><a href="{{ route('frontend.index') }}"><p>@lang('backend.home-page')</p>
                                 </a></li>
                             {{--                            <li class="position-static"><a href="#"><span>@lang('backend.categories')</span></a>--}}
                             {{--                                <ul class="mega-menu four-column">--}}
@@ -64,8 +72,8 @@
                                     </ul>
                                 </li>
                             @endforeach
-                            <li><a href="{{ route('frontend.about') }}"><p>@lang('backend.about')</p></a></li>
-                            <li><a href="{{ route('frontend.contact-us-page') }}"><p>@lang('backend.contact-us')</p></a>
+                            <li class="@if(\Illuminate\Support\Facades\Route::currentRouteName() == 'frontend.about') active @endif"><a href="{{ route('frontend.about') }}"><p>@lang('backend.about')</p></a></li>
+                            <li class="@if(\Illuminate\Support\Facades\Route::currentRouteName() == 'frontend.contact-us-page') active @endif"><a href="{{ route('frontend.contact-us-page') }}"><p>@lang('backend.contact-us')</p></a>
                             </li>
                         </ul>
                     </nav>
