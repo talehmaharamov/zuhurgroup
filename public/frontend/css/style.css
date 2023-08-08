@@ -1,66 +1,58 @@
 @charset "UTF-8";
-/*-----------------------------------------------------------------------------------
 
-    Template Name: Conebrick – A Masterly HTML Template for Construction
-    Version: 1.0
-
------------------------------------------------------------------------------------
-
-    CSS INDEX
-    ===================
-
-    01. Theme default CSS
-    02. Header CSS
-    03. Hero CSS
-    04. Work CSS
-    05. Parallax CSS
-    06. About CSS
-    07. Feature CSS
-    08. Project CSS
-    09. Funfact CSS
-    10. Service CSS
-    11. Team CSS
-    12. CTA CSS
-    13. Testimonial CSS
-    14. Get In Touch CSS
-    15. Mission CSS
-    16. FAQ CSS
-    17. Visit CSS
-    18. Cost Calculator CSS
-    19. Maintenance CSS
-    20. Coming Soon CSS
-    21. 404 CSS
-    22. History CSS
-    23. Achievements CSS
-    24. Pricing CSS
-    25. Product CSS
-    26. Cart CSS
-    27. Checkout CSS
-    28. My Account CSS
-    29. Portfolio Details CSS
-    30. Typography CSS
-    31. List CSS
-    32. Chart CSS
-    33. Blog CSS
-    34. Comment CSS
-    35. Sidebar CSS
-    36. Brand CSS
-    37. Contact CSS
-    38. Footer CSS
-
------------------------------------------------------------------------------------*/
-/*----------------------------------------*/
-/*  01. Theme default CSS
-/*----------------------------------------*/
-/*-- Google Font --*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,500,700");
-/*-- Common Style --*/
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 html, body, .site-wrapper {
   height: 100%; }
+
+.whats-float {
+    position: fixed;
+    transform:translate(135px,0px);
+    top:10%;
+    right:0;
+    width:180px;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 4px 0 0 4px;
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+    vertical-align: middle
+}
+.whats-float a span {
+    color: white;
+    font-size: 15px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    position: absolute;
+    line-height: 16px;
+    font-weight: bolder;
+}
+
+.whats-float i {
+    font-size: 30px;
+    color: white;
+    line-height: 30px;
+    padding: 10px;
+    transform:rotate(0deg);
+    transition: all 0.5s ease-in-out;
+    text-align:center;
+
+}
+
+.whats-float:hover {
+    color: #FFFFFF;
+    transform:translate(0px,0px);
+}
+
+.whats-float:hover i  {
+    transform:rotate(360deg);
+}
+/* Wp End */
 
 body {
   background-color: #ffffff;
