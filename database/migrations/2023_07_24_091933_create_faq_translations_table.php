@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->string('locale')->index();
             $table->longText('name');
             $table->longText('description');
+            $table->longText('schema')->nullable();
             $table->unique(['faq_id', 'locale']);
             $table->foreign('faq_id')->references('id')->on('faqs')->onDelete('cascade');
             $table->timestamps();

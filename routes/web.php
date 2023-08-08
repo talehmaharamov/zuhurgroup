@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\LanguageController as LChangeLan;
 use App\Http\Controllers\Frontend\HomeController as FHome;
 use App\Http\Controllers\Frontend\CategoryController as FCategory;
+use App\Http\Controllers\Frontend\AboutController as FAbout;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +17,8 @@ Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLangua
     Route::post('/contact-us/send-message', [FHome::class, 'sendMessage'])->name('sendMessage');
     Route::post('/order/new', [FHome::class, 'newOrder'])->name('newOrder');
     Route::get('/', [FHome::class, 'index'])->name('index');
-//    Route::get('/about', [FAbout::class, 'index'])->name('about');
-    Route::get('/categories/{slug}', [FCategory::class, 'index'])->name('selectedCategory');
+    Route::get('/about', [FAbout::class, 'index'])->name('about');
+    Route::get('/categories/{slug}', [FCategory::class, 'show'])->name('selectedCategory');
     Route::post('/search', [FHome::class, 'search'])->name('search');
     Route::post('/newsletter-add-new', [FHome::class, 'newsletter'])->name('newsletter');
     Route::get('/newsletter/{id}/{token}', [FHome::class, 'verifyMail'])->name('verifyMail');

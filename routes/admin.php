@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
         Route::get('faq/{id}/delete', [App\Http\Controllers\Backend\FaqController::class, 'delete'])->name('faqDelete');
         Route::get('partner/{id}/delete', [App\Http\Controllers\Backend\PartnerController::class, 'delete'])->name('partnerDelete');
         Route::get('product/{id}/delete', [App\Http\Controllers\Backend\ProductController::class, 'delete'])->name('productDelete');
+        Route::get('category/{id}/delete', [App\Http\Controllers\Backend\CategoryController::class, 'delete'])->name('categoryDelete');
         Route::get('blog/{id}/delete', [App\Http\Controllers\Backend\BlogController::class, 'delete'])->name('blogDelete');
         Route::get('portfolio/{id}/delete', [App\Http\Controllers\Backend\PortfolioController::class, 'delete'])->name('portfolioDelete');
         Route::get('service/{id}/delete', [App\Http\Controllers\Backend\ServiceController::class, 'delete'])->name('serviceDelete');

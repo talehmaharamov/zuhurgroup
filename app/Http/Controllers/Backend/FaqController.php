@@ -38,6 +38,7 @@ class FaqController extends Controller
                 $translation->faq_id = $faq->id;
                 $translation->name = $request->name[$lang->code];
                 $translation->description = $request->description[$lang->code];
+                $translation->schema = $request->schema[$lang->code];
                 $translation->save();
             }
             alert()->success(__('messages.success'));
@@ -62,8 +63,9 @@ class FaqController extends Controller
             $faq = Faq::find($id);
             DB::transaction(function () use ($request, $faq) {
                 foreach (active_langs() as $lang) {
-                   $faq->translate($lang->code)->name = $request->name[$lang->code];
-                   $faq->translate($lang->code)->description = $request->description[$lang->code];
+                    $faq->translate($lang->code)->name = $request->name[$lang->code];
+                    $faq->translate($lang->code)->description = $request->description[$lang->code];
+                    $faq->translate($lang->code)->schema = $request->schema[$lang->code];
                 }
                 $faq->save();
             });

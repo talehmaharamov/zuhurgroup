@@ -4,4 +4,5 @@
 
 
     @include('frontend.layouts.partners')
+    @include('frontend.layouts.faq')
 @endsection

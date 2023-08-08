@@ -38,6 +38,15 @@
                                                                   required="">{!! $faq->translate($lan->code)->description ?? __('backend.translation-not-found') !!}</textarea>
                                                         {!! validation_response('backend.description') !!}
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.schema') <span
+                                                                class="text-danger">*</span></label>
+                                                        <textarea name="schema[{{ $lan->code }}]"
+                                                                  class="form-control"
+                                                                  required=""
+                                                                  rows="9">{{ $faq->translate($lan->code)->schema ?? __('backend.translation-not-found') }}</textarea>
+                                                        {!! validation_response('backend.schema') !!}
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach

@@ -13,14 +13,8 @@ class Faq extends Model implements TranslatableContract
 {
     use Translatable, LogsActivity;
 
-    public $translatedAttributes = ['name'];
+    public array $translatedAttributes = ['name','description','schema'];
     protected $guarded = [];
-
-    public function photos()
-    {
-        return $this->hasMany(FaqPhotos::class);
-    }
-
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()->logAll();
