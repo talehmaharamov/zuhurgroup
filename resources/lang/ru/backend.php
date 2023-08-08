@@ -65,6 +65,7 @@ return array (
   'current-package' => 'Текущий пакет',
   'faq' => 'Часто задаваемые вопросы',
   'general' => '',
+  'home-page' => 'Главная',
   'media' => '',
   'meta' => 'Мета',
   'middle' => 'Средний',

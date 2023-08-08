@@ -58,9 +58,7 @@
                     <div class="footer-nav">
                         <nav>
                             <ul>
-                                <li><a href="#">Our blog</a></li>
-                                <li><a href="#">Lastest projects</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{{ route('frontend.contact-us-page') }}">@lang('backend.contact-us')</a></li>
                             </ul>
                         </nav>
                     </div>
