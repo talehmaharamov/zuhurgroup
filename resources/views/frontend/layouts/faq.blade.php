@@ -4,14 +4,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="what-is-included mt-0">
-                        <!--FAQ Accordin Start-->
                         <div class="faq-accordion yellow-color">
                             <div id="accordion">
                                 @foreach($faqs as $faqKey => $faq)
-                                    <div class="card @if($loop->first) actives @endif ">
+                                    <div class="card @if($loop->first) actives @endif">
                                         <div class="card-header" id="heading{{ $faqKey }}">
                                             <h5 class="mb-0">
-                                                <a class="" data-toggle="collapse" data-target="#collapseOne"
+                                                <a class="" data-toggle="collapse" data-target="#collapse{{ $faqKey }}"
                                                    aria-expanded="true" aria-controls="collapse{{ $faqKey }}">
                                                     {{ $faq->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}
                                                 </a>
@@ -27,7 +26,6 @@
                                 @endforeach
                             </div>
                         </div>
-                        <!--FAQ Accordin End-->
                     </div>
                 </div>
             </div>

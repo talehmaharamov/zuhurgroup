@@ -12,44 +12,32 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'slug' => 'first',
-                'translation' => ['az' => 'ilk', 'en' => 'first', 'ru' => 'sdfnkjsdnf'],
+                'slug' => 'zuhur-construction',
+                'translation' => ['az' => 'Zühur İnşaat', 'en' => 'Zuhur Construction', 'ru' => 'Зухур Строительство'],
                 'subcategories' => [
                     [
-                        'slug' => 'ikinci',
-                        'translation' => ['az' => 'ikinci', 'en' => 'second', 'ru' => 'adasdsad'],
+                        'slug' => 'repair-and-construction',
+                        'translation' => ['az' => 'Təmir və tikinti', 'en' => 'Repair and construction', 'ru' => 'Ремонт и строительство'],
                     ],
                     [
-                        'slug' => 'dgdgdgdg',
-                        'translation' => ['az' => 'ucuncu', 'en' => 'third', 'ru' => 'kbvdfn'],
+                        'slug' => 'repair-and-design',
+                        'translation' => ['az' => 'Təmir və dizayn', 'en' => 'Repair and design', 'ru' => 'Ремонт и дизайн'],
                     ],
                     [
-                        'slug' => 'dorduncu',
-                        'translation' => ['az' => 'dorduncu', 'en' => 'fourth', 'ru' => 'asdasdsadasdas'],
+                        'slug' => 'construction-in-a-bowl',
+                        'translation' => ['az' => 'Qaba tikinti', 'en' => 'Construction in a bowl', 'ru' => 'Строительство в чаше'],
                     ],
                 ]
             ],
             [
                 'slug' => 'first1',
-                'translation' => ['az' => 'ilk1', 'en' => 'first1', 'ru' => 'sdfnkjsdnf1'],
+                'translation' => ['az' => 'Zühur Təmizlik', 'en' => 'Zuhur Cleaning', 'ru' => 'Зухур Чистота'],
                 'subcategories' => [
                     [
-                        'slug' => 'ikinci1',
-                        'translation' => ['az' => 'ikinci1', 'en' => 'second1', 'ru' => 'adasdsad1'],
-                    ],
-                    [
-                        'slug' => 'gdfgdfg',
-                        'translation' => ['az' => 'ucuncu1', 'en' => 'third1', 'ru' => 'kbvdfn1'],
-                    ],
-                    [
-                        'slug' => 'dorduncu1',
-                        'translation' => ['az' => 'dorduncu1', 'en' => 'fourth1', 'ru' => 'asdasdsadasdas1'],
+                        'slug' => 'cleaning-service',
+                        'translation' => ['az' => 'Təmizlik xidməti', 'en' => 'Cleaning service', 'ru' => 'Услуги по уборке'],
                     ],
                 ]
-            ],
-            [
-                'slug' => 'first2',
-                'translation' => ['az' => 'ilk12', 'en' => 'first12', 'ru' => 'sdfnkjsdnf12'],
             ],
         ];
         foreach ($categories as $cat) {
