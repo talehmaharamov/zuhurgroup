@@ -15,6 +15,7 @@ return array (
   'ads-count' => 'Ads Count',
   'age' => 'Age',
   'age-checker' => 'Age Checker',
+  'all-right-reserved' => 'All rights reserved',
   'alt' => 'Alternate',
   'alt-categories' => 'Alt Categories',
   'ap' => 'Admin Panel',

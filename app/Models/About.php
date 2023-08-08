@@ -11,7 +11,7 @@ use Spatie\Activitylog\LogOptions;
 class About extends Model implements TranslatableContract
 {
     use Translatable,LogsActivity;
-    public $translatedAttributes = ['title', 'description'];
+    public $translatedAttributes = ['title', 'description','alt'];
     protected $fillable = ['photo'];
     public function getActivitylogOptions(): LogOptions
     {

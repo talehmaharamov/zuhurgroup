@@ -1,1 +1,0 @@
-Taleh Maharramov

@@ -38,6 +38,12 @@
                                                                   required="">{!! $about->translate(app()->getLocale())->description ?? __('backend.translation-not-found') !!}</textarea>
                                                         {!! validation_response('backend.description') !!}
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.alt')</label>
+                                                        <textarea name="alt[{{ $lan->code }}]" type="text"
+                                                                  class="form-control"
+                                                                  rows="7">{{ $about->translate($lan->code)->alt ?? __('backend.translation-not-found') }}</textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach

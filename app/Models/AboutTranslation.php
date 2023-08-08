@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 class AboutTranslation extends Model
 {
     use LogsActivity;
+
     public $timestamps = false;
-    protected $fillable = ['title','description'];
+    protected $fillable = ['title', 'description', 'alt'];
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()->logOnly(['title','description']);
+        return LogOptions::defaults()->logOnly(['title', 'description']);
     }
 }

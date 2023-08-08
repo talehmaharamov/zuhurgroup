@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('locale')->index();
             $table->longText('title')->nullable();
             $table->longText('description')->nullable();
+            $table->longText('alt')->nullable();
             $table->unique(['slider_id', 'locale']);
             $table->foreign('slider_id')->references('id')->on('sliders')->onDelete('cascade');
         });

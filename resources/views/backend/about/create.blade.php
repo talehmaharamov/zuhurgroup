@@ -38,13 +38,19 @@
                                                         {!! validation_response('backend.description') !!}
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label>@lang('backend.photo')</label>
-                                                        <input type="file" name="photo" class="form-control">
+                                                        <label>@lang('backend.alt')</label>
+                                                        <textarea name="alt[{{ $lan->code }}]" type="text"
+                                                                  class="form-control"
+                                                                  rows="7"
+                                                                  placeholder="@lang('backend.alt')"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                         @endforeach
-
+                                            <div class="mb-3">
+                                                <label>@lang('backend.photo')</label>
+                                                <input type="file" name="photo" class="form-control">
+                                            </div>
                                     </div>
                                 </div>
                                 @include('backend.templates.components.buttons')

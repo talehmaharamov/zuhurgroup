@@ -35,6 +35,12 @@
                                                                   name="description[{{$lan->code}}]"></textarea>
                                                         {!! validation_response('backend.description') !!}
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.alt')</label>
+                                                        <textarea class="form-control" rows="7"
+                                                                  placeholder="@lang('backend.alt')"
+                                                                  name="alt[{{$lan->code}}]"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -43,11 +49,6 @@
                                             <input type="file" name="photo" class="form-control" required=""
                                                    id="validationCustom" accept="image/*">
                                             {!! validation_response('backend.photo') !!}
-                                        </div>
-                                        <div class="mb-3">
-                                            <label>@lang('backend.alt')</label>
-                                            <input type="text" name="alt" class="form-control" id="validationCustom"
-                                                   placeholder="@lang('backend.alt')">
                                         </div>
                                     </div>
                                 </div>
