@@ -51,9 +51,9 @@
                     <!--Pagination Start-->
                     <div class="page-pagination">
                         <ul>
-                            @foreach($contents->links() as $paginatePage)
-                                <li class="@if($loop->first) active @endif"><a href="#">{{$paginatePage}}</a></li>
-                            @endforeach
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
                             <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
                         </ul>
                     </div>

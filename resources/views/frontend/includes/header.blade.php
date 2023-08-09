@@ -1,7 +1,13 @@
 <div class="whats-float">
     <a href="https://wa.me/{{ settings('whatsapp') }}"
        target="_blank">
-        <i class="fab fa-whatsapp"></i><span>@lang('Whatsapp')<br><small>{{ settings('whatsapp') }}</small></span>
+        <i class="fa fa-whatsapp"></i><span>@lang('Whatsapp')<br><small>{{ settings('whatsapp') }}</small></span>
+    </a>
+</div>
+<div class="whats-float1">
+    <a href="https://wa.me/{{ settings('whatsapp') }}"
+       target="_blank">
+        <i class="fa fa-instagram"></i><span>@lang('Instagram')<br><small>{{ settings('instagram') }}</small></span>
     </a>
 </div>
 
