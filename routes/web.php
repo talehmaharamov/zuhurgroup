@@ -11,7 +11,8 @@ Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLangua
     Route::get('/contact-us', function () {
         return view('frontend.contact-us.index');
     })->name('contact-us-page');
-    Route::get('/c/{slug}', [\App\Http\Controllers\Frontend\CategoryController::class, 'show'])->name('selectedCategory');
+    Route::get('/categories/{slug}', [\App\Http\Controllers\Frontend\CategoryController::class, 'show'])->name('selectedCategory');
+//    Route::get('c/{contentSlug}',[\App\Http\]);
     Route::get('/change-language/{dil}', [LChangeLan::class, 'frontLanguage'])->name('frontLanguage');
     Route::get('create-order', [FHome::class, 'createOrder'])->name('createOrder');
     Route::post('/contact-us/send-message', [FHome::class, 'sendMessage'])->name('sendMessage');
