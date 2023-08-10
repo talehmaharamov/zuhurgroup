@@ -27,7 +27,7 @@
                                                     <div class="mb-3">
                                                         <label>@lang('backend.name') <span class="text-danger">*</span></label>
                                                         <input name="name[{{ $lan->code }}]" type="text"
-                                                               class="form-control"
+                                                               class="form-control" id="name{{ $lan->code}}"
                                                                required=""
                                                                value="{{ $content->translate($lan->code)->name ?? __('backend.translation-not-found') }}">
                                                         {!! validation_response('backend.name') !!}
