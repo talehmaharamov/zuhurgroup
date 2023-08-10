@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->string('locale')->index();
             $table->longText('name');
             $table->longText('content');
+            $table->longText('short_description');
             $table->longText('meta_title')->nullable();
             $table->longText('meta_description')->nullable();
             $table->longText('alt')->nullable();

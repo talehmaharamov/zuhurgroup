@@ -46,6 +46,7 @@ class ContentController extends Controller
                 $contentTranslation->content_id = $content->id;
                 $contentTranslation->name = $request->name[$lang->code];
                 $contentTranslation->content = $request->content1[$lang->code];
+                $contentTranslation->short_description = $request->short_description[$lang->code];
                 $contentTranslation->meta_title = $request->meta_title[$lang->code];
                 $contentTranslation->meta_description = $request->meta_description[$lang->code];
                 $contentTranslation->alt = $request->alt[$lang->code];
@@ -103,6 +104,7 @@ class ContentController extends Controller
                     $content->translate($lang->code)->name = $request->name[$lang->code];
                     $content->translate($lang->code)->content = $request->content1[$lang->code];
                     $content->meta_title = $request->meta_title[$lang->code];
+                    $content->short_description = $request->short_description[$lang->code];
                     $content->meta_description = $request->meta_description[$lang->code];
                     $content->alt = $request->alt[$lang->code];
                 }
