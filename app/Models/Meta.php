@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Faq extends Model implements TranslatableContract
+class Meta extends Model implements TranslatableContract
 {
     use Translatable, LogsActivity;
-    public array $translatedAttributes = ['name','description','schema'];
+    public array $translatedAttributes = ['tag'];
     protected $guarded = [];
     public function getActivitylogOptions(): LogOptions
     {

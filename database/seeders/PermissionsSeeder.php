@@ -17,20 +17,15 @@ class PermissionsSeeder extends Seeder
             'content',
             'languages',
             'settings',
-            'seo-tags',
             'users',
             'permissions',
             'report',
             'dodenv',
             'news',
-            'catalog',
-            'media',
             'blog',
-            'product',
-            'portfolio',
-            'service',
             'partner',
             'faq',
+            'meta'
         ];
         foreach ($permissions as $permission) {
             add_permission($permission);
