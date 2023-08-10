@@ -11,8 +11,9 @@ class ContentController extends Controller
 {
     public function show($slug): View
     {
-        $content = Content::where('slug', $slug)->first();
+        $content = Content::where('slug', $slug)->with('category')->first();
         $content->increment('view');
+        $relatedContents = Content::where('category_id', '=', $content->category->id)->where('id', '<>', $content->id)->get();
         return view('frontend.content.show', get_defined_vars());
     }
 }
