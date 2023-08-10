@@ -2,7 +2,7 @@
     <div data-simplebar class="h-100" style="overflow-y: auto;">
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
-{{--                {{ creation('Faq','Faq',true,false) }}--}}
+{{--                {{ creation('Meta','Meta',true,false) }}--}}
                 <li>
                     <a href="{{ route('backend.dashboard') }}" class="waves-effect">
                         <i class="ri-home-4-fill"></i>
@@ -42,46 +42,6 @@
                         </a>
                     </li>
                 @endcan
-                @can('catalog index')
-                    <li>
-                        <a href="{{ route('backend.catalog.index') }}" class="waves-effect">
-                            <i class="fas fa-images"></i>
-                            <span>@lang('backend.catalog')</span>
-                        </a>
-                    </li>
-                @endcan
-                @can('media index')
-                    <li>
-                        <a href="{{ route('backend.media.index') }}" class="waves-effect">
-                            <i class="fas fa-photo-video"></i>
-                            <span>@lang('backend.media')</span>
-                        </a>
-                    </li>
-                @endcan
-                @can('service index')
-                    <li>
-                        <a href="{{ route('backend.service.index') }}" class="waves-effect">
-                            <i class="fas fa-wrench"></i>
-                            <span>@lang('backend.service')</span>
-                        </a>
-                    </li>
-                @endcan
-                @can('product index')
-                    <li>
-                        <a href="{{ route('backend.product.index') }}" class="waves-effect">
-                            <i class="fas fa-couch"></i>
-                            <span>@lang('backend.product')</span>
-                        </a>
-                    </li>
-                @endcan
-                @can('portfolio index')
-                    <li>
-                        <a href="{{ route('backend.portfolio.index') }}" class="waves-effect">
-                            <i class="fas fa-portrait"></i>
-                            <span>@lang('backend.portfolio')</span>
-                        </a>
-                    </li>
-                @endcan
                 @can('partner index')
                     <li>
                         <a href="{{ route('backend.partner.index') }}" class="waves-effect">
@@ -90,19 +50,27 @@
                         </a>
                     </li>
                 @endcan
-                @can('blog index')
-                    <li>
-                        <a href="{{ route('backend.blog.index') }}" class="waves-effect">
-                            <i class="fas fa-blog"></i>
-                            <span>@lang('backend.blog')</span>
-                        </a>
-                    </li>
-                @endcan
+{{--                @can('blog index')--}}
+{{--                    <li>--}}
+{{--                        <a href="{{ route('backend.blog.index') }}" class="waves-effect">--}}
+{{--                            <i class="fas fa-blog"></i>--}}
+{{--                            <span>@lang('backend.blog')</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                @endcan--}}
                 @can('about index')
                     <li>
                         <a href="{{ route('backend.about.index') }}" class="waves-effect">
                             <i class="fas fa-info"></i>
                             <span>@lang('backend.about')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('meta index')
+                    <li>
+                        <a href="{{ route('backend.meta.index') }}" class="waves-effect">
+                            <i class="fas fa-tags"></i>
+                            <span>@lang('backend.meta')</span>
                         </a>
                     </li>
                 @endcan

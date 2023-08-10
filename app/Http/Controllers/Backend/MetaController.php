@@ -3,83 +3,90 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\MetaTag;
+use App\Http\Helpers\CRUDHelper;
+use App\Models\MetaTranslation;
+use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
-use Symfony\Component\HttpFoundation\Response;
+use App\Models\Meta;
+use Illuminate\Support\Facades\DB;
 
 class MetaController extends Controller
 {
+    protected array $pages = ['all' => 'all', 'index' => 'home-page', 'selectedContent' => 'content', 'about' => 'about', 'contact-us-page' => 'contact-us'];
+
     public function index()
     {
-        abort_if(Gate::denies('seo-tags index'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $metaTags = MetaTag::all();
-        return view('backend.tags.index', get_defined_vars());
+        check_permission('meta index');
+        $metas = Meta::all();
+        return view('backend.meta.index', get_defined_vars());
     }
 
     public function create()
     {
-        abort_if(Gate::denies('seo-tags create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        return view('backend.tags.create');
-    }
-
-    public function delSeo($id)
-    {
-        abort_if(Gate::denies('seo-tags delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        try {
-            MetaTag::find($id)->delete();
-            alert()->success(__('messages.success'));
-            return redirect()->back();
-        } catch (\Exception $e) {
-            alert()->error(__('messages.error'));
-            return redirect()->back();
-        }
-    }
-
-    public function seoStatus($id)
-    {
-        abort_if(Gate::denies('seo-tags edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $status = MetaTag::where('id', $id)->value('status');
-        if ($status == 1) {
-            MetaTag::where('id', $id)->update(['status' => 0]);
-        } else {
-            MetaTag::where('id', $id)->update(['status' => 1]);
-        }
-        return redirect()->route('backend.seo.index');
+        check_permission('meta create');
+        $pages = $this->pages;
+        return view('backend.meta.create', get_defined_vars());
     }
 
     public function store(Request $request)
     {
-        abort_if(Gate::denies('seo-tags create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        check_permission('meta create');
         try {
-            MetaTag::create([
-                'attribute' => $request->attribute,
-                'attribute_name' => $request->attribute_name,
-                'content' => $request->content1,
-                'status' => 1
-            ]);
+            $meta = new Meta();
+            $meta->page = $request->page;
+            $meta->save();
+            foreach (active_langs() as $lang) {
+                $translation = new MetaTranslation();
+                $translation->locale = $lang->code;
+                $translation->meta_id = $meta->id;
+                $translation->tag = $request->tag[$lang->code];
+                $translation->save();
+            }
+            alert()->success(__('messages.success'));
+            return redirect(route('backend.meta.index'));
+        } catch (Exception $e) {
+            alert()->error(__('backend.error'));
+            return redirect(route('backend.meta.index'));
+        }
+    }
+
+    public function edit(string $id)
+    {
+        check_permission('meta edit');
+        $meta = Meta::find($id);
+        $pages = $this->pages;
+        return view('backend.meta.edit', get_defined_vars());
+    }
+
+    public function update(Request $request, string $id)
+    {
+        check_permission('meta edit');
+        try {
+            $meta = Meta::find($id);
+            $meta->page = $request->page;
+            DB::transaction(function () use ($request, $meta) {
+                foreach (active_langs() as $lang) {
+                    $meta->translate($lang->code)->tag = $request->tag[$lang->code];
+                }
+                $meta->save();
+            });
             alert()->success(__('messages.success'));
             return redirect()->back();
-        } catch (\Exception $e) {
-            alert()->error(__('messages.error'));
+        } catch (Exception $e) {
+            alert()->error(__('backend.error'));
             return redirect()->back();
         }
     }
 
-    public function update(Request $request, $id)
+    public function status(string $id)
     {
-        abort_if(Gate::denies('seo-tags edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        try {
-            MetaTag::find($id)->update([
-                'attribute' => $request->attribute,
-                'attribute_name' => $request->attribute_name,
-                'content' => $request->content1,
-            ]);
-            alert()->success(__('messages.success'));
-            return redirect()->back();
-        } catch (\Exception $e) {
-            alert()->error(__('messages.error'));
-            return redirect()->back();
-        }
+        check_permission('meta edit');
+        return CRUDHelper::status('\App\Models\Meta', $id);
+    }
+
+    public function delete(string $id)
+    {
+        check_permission('meta delete');
+        return CRUDHelper::remove_item('\App\Models\Meta', $id);
     }
 }
