@@ -12,6 +12,7 @@ class ContentController extends Controller
     public function show($slug): View
     {
         $content = Content::where('slug', $slug)->first();
+        $content->increment('view');
         return view('frontend.content.show', get_defined_vars());
     }
 }

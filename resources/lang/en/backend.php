@@ -185,6 +185,7 @@ return array (
   'services' => 'Services',
   'settings' => 'Settings',
   'sharedPostMe' => 'Shared Posts',
+  'short-description' => 'Short description',
   'site-setting' => 'Site Settings',
   'site-users' => 'Site Users',
   'slider' => 'Slider',

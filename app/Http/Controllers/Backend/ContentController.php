@@ -39,6 +39,7 @@ class ContentController extends Controller
             if ($request->hasFile('photo')) {
                 $content->photo = upload('content', $request->file('photo'));
             }
+            $content->slug = $request->slug;
             $category->content()->save($content);
             foreach (active_langs() as $lang) {
                 $contentTranslation = new ContentTranslation();
@@ -100,6 +101,7 @@ class ContentController extends Controller
                         $content->photos()->save($contentPhoto);
                     }
                 }
+                $content->slug = $request->slug;
                 foreach (active_langs() as $lang) {
                     $content->translate($lang->code)->name = $request->name[$lang->code];
                     $content->translate($lang->code)->content = $request->content1[$lang->code];

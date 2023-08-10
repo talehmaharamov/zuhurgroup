@@ -10,6 +10,7 @@ return new class extends Migration {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->longText('photo')->nullable();
+            $table->string('slug')->unique();
             $table->foreignId('category_id')->unsigned();
             $table->integer('view')->default(0);
             $table->string('pdf')->nullable();

@@ -185,6 +185,7 @@ return array (
   'services' => 'Xidmət sahələri',
   'settings' => 'Tənzimləmələr',
   'sharedPostMe' => 'Paylaşdıqlarım',
+  'short-description' => 'Qısa təsvir',
   'site-setting' => 'Sayt tənzimləmələri',
   'site-users' => 'Sayt istifadəçiləri',
   'slider' => 'Slayder',
