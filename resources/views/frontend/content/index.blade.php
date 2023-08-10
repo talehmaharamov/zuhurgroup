@@ -27,18 +27,20 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-blog">
                             <div class="blog-image">
-                                <a href="single-blog.html"><img src="{{ asset($content->photo) }}"
+                                <a href="{{ route('frontend.selectedContent',$content->slug) }}"><img src="{{ asset($content->photo) }}"
                                                                 alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}"></a>
                             </div>
                             <div class="blog-content">
-                                <h2><a href="single-blog.html">{{ $content->translate(app()->getLocale())->name ?? '' }}</a></h2>
+                                <h2>
+                                    <a href="{{ route('frontend.selectedContent',$content->slug) }}">{{ $content->translate(app()->getLocale())->name ?? '' }}</a>
+                                </h2>
                                 <ul class="meta">
                                     <li><i class="fa fa-clock-o"></i>{{ $content->created_at->format('d.m.Y')  }}</li>
-                                    <li><i class="fa fa-folder-open"></i><a href="#">{{ $category->translate(app()->getLocale())->name ?? '' }}</a></li>
+                                    <li><i class="fa fa-folder-open"></i><a
+                                            href="#">{{ $category->translate(app()->getLocale())->name ?? '' }}</a></li>
                                 </ul>
-                                <p>The UK arm of French contractor Bouygues saw its turnover increase but pre-tax losses
-                                    slumped to £78m …</p>
-                                <a class="read-more-btn" href="single-blog.html">@lang('backend.read-more')<i
+                                <p>{!! $category->translate(app()->getLocale())->short_description ?? '' !!}</p>
+                                <a class="read-more-btn" href="{{ route('frontend.selectedContent',$content->slug) }}">@lang('backend.read-more')<i
                                         class="fa fa-chevron-right"></i></a>
                             </div>
                         </div>

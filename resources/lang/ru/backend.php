@@ -132,6 +132,7 @@ return array (
   'services' => 'Услуги',
   'settings' => 'Настройки',
   'sharedPostMe' => 'Мои публикации',
+  'short-description' => 'Краткое описание',
   'site-setting' => 'Настройки сайта',
   'site-users' => 'Пользователи сайта',
   'slider' => 'Слайдер',
