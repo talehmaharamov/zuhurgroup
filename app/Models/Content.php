@@ -13,7 +13,7 @@ class Content extends Model implements TranslatableContract
 {
     use Translatable, LogsActivity;
 
-    public array $translatedAttributes = ['name', 'content', 'meta_title', 'meta_description', 'alt'];
+    public array $translatedAttributes = ['name', 'content','short_description', 'meta_title', 'meta_description', 'alt'];
     protected $guarded = ['slug', 'view', 'photo'];
 
     public function photos(): \Illuminate\Database\Eloquent\Relations\HasMany
