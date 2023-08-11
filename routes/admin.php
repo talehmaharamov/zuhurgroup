@@ -1,8 +1,5 @@
 <?php
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
 //General
     Route::get('change-language/{lang}', [App\Http\Controllers\Backend\LanguageController::class, 'switchLang'])->name('switchLang');

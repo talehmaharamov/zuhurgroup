@@ -30,14 +30,6 @@
                                                         {!! validation_response('backend.title') !!}
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label>@lang('backend.description') <span
-                                                                class="text-danger">*</span></label>
-                                                        <textarea class="form-control"
-                                                                  id="elm{{ $lan->code }}1"
-                                                                  name="description[{{$lan->code}}]">{!! $slider->translate($lan->code)->description ?? __('backend.translation-not-found') !!}</textarea>
-                                                        {!! validation_response('backend.description') !!}
-                                                    </div>
-                                                    <div class="mb-3">
                                                         <label>@lang('backend.alt')</label>
                                                         <textarea class="form-control" rows="7"
                                                                   name="alt[{{$lan->code}}]">{{ $slider->translate($lan->code)->alt ?? __('backend.translation-not-found') }}</textarea>

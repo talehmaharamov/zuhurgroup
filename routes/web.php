@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Backend\LanguageController as LChangeLan;
 use App\Http\Controllers\Frontend\HomeController as FHome;
-use App\Http\Controllers\Frontend\CategoryController as FCategory;
 use App\Http\Controllers\Frontend\AboutController as FAbout;
 use Illuminate\Support\Facades\Route;
 

@@ -46,7 +46,6 @@ class SliderController extends Controller
                 $sliderTranslation->slider_id = $slider->id;
                 $sliderTranslation->title = $request->title[$lang->code];
                 $sliderTranslation->alt = $request->alt[$lang->code] ?? null;
-                $sliderTranslation->description = $request->description[$lang->code];
                 $sliderTranslation->save();
             }
             alert()->success(__('messages.success'));
@@ -73,7 +72,6 @@ class SliderController extends Controller
                 foreach (active_langs() as $lang) {
                     $slider->translate($lang->code)->title = $request->title[$lang->code];
                     $slider->translate($lang->code)->alt = $request->alt[$lang->code] ?? null;
-                    $slider->translate($lang->code)->description = $request->description[$lang->code];
                 }
                 $slider->save();
             });

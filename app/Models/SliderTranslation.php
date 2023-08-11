@@ -10,8 +10,9 @@ use Spatie\Activitylog\Traits\LogsActivity;
 class SliderTranslation extends Model
 {
     use LogsActivity;
+
     public $timestamps = false;
-    protected $fillable = ['title','description','alt'];
+    protected $fillable = ['title', 'alt'];
 
     public function getActivitylogOptions(): LogOptions
     {
