@@ -4,8 +4,6 @@
 <title>@yield('title') @lang('backend.zuhur')</title>
 @if(\Illuminate\Support\Facades\Route::currentRouteName() == 'frontend.selectedContent' )
     @yield('meta')
-@else
-    <meta name="description" content="heleki testi">
 @endif
 @if(array_key_exists(str_replace('frontend.', '', \Illuminate\Support\Facades\Route::currentRouteName()), $metas->toArray()))
     @foreach($metas[str_replace('frontend.','',\Illuminate\Support\Facades\Route::currentRouteName())] as $meta)

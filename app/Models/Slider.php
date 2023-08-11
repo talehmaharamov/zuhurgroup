@@ -12,7 +12,7 @@ class Slider extends Model implements TranslatableContract
 {
     use LogsActivity, Translatable;
 
-    public array $translatedAttributes = ['title', 'description', 'alt'];
+    public array $translatedAttributes = ['title', 'alt'];
     protected $guarded = [];
 
     public function getActivitylogOptions(): LogOptions
