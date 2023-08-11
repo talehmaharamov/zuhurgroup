@@ -4,7 +4,7 @@
 Commons Variables
 -----------------------------------*/
 var windows = $(window);
-    
+
 /*--
     Menu Sticky
 -----------------------------------*/
@@ -18,8 +18,8 @@ windows.on('scroll', function() {
         sticky.addClass('is-sticky');
     }
 });
-    
-/*---------------------------- 
+
+/*----------------------------
    3. Sidebar Search Active
 -----------------------------*/
 function sidebarSearch() {
@@ -40,11 +40,11 @@ sidebarSearch();
 
 /*---------------------------------
 	Light Gallery Activation
------------------------------------*/   
+-----------------------------------*/
 $("#video-gallery, .product-gallery, .portfolio-gallery").lightGallery({
     selector: '.item',
-}); 
-     
+});
+
 /*--------------------------
     Counter Up
 ---------------------------- */
@@ -57,12 +57,12 @@ $('.counter').counterUp({
     Match Height Active
 ----------------------------------*/
 $('.single-feature-list, .cta-6-content, .call-us').matchHeight();
-    
-/*------------------------------ 
+
+/*------------------------------
     Nice Select Active
 ---------------------------------*/
 $('.nice-select').niceSelect();
-    
+
 /*---------------------------------
 	Minicart Activation
 -----------------------------------*/
@@ -100,13 +100,13 @@ mainMenuNav.meanmenu({
 });
 /*--------------------------
     Progress Bar Js
------------------------------*/ 
+-----------------------------*/
 $('.progress-bar').each(function(){
     var $this = $(this);
     var $width = $this.data('width');
-    
+
     $this.css("width", $width);
-    
+
 });
 /*--
     - Background Image
@@ -117,7 +117,7 @@ $backgroundImage.each(function() {
         $bgImage = $this.data('bg');
     $this.css('background-image', 'url('+$bgImage+')');
 });
-    
+
 /*---------------------------
     Slider Range Active
 -----------------------------*/
@@ -144,7 +144,7 @@ $rangeSlider.each(function(){
     $uiHandle.html( '<span>' + $this.slider('value') + '</span>');
 });
 /*-------------------------
-    Radial Progress 02 
+    Radial Progress 02
 ---------------------------*/
 $('.radial-progress').waypoint(function () {
     $('.radial-progress').easyPieChart({
@@ -162,11 +162,11 @@ $('.radial-progress').waypoint(function () {
 });
 /*-------------------------------
     Datepicker Active
---------------------------------*/ 
+--------------------------------*/
  $( "#datepicker" ).datepicker();
 /*-------------------------------
     From Toggle Active
---------------------------------*/   
+--------------------------------*/
 $('.next-btn').on('click', function(e){
     e.preventDefault();
     var $this = $(this);
@@ -176,9 +176,9 @@ $('.next-btn').on('click', function(e){
     $this.siblings('.total-point').css({"padding-right": "0"});
 });
 
-/*----------------------------------- 
-    Count Down Active 
-----------------------------------*/ 
+/*-----------------------------------
+    Count Down Active
+----------------------------------*/
 $('[data-countdown]').each(function() {
 	var $this = $(this), finalDate = $(this).data('countdown');
 	$this.countdown(finalDate, function(event) {
@@ -653,6 +653,7 @@ $('.portfolio-slider-3').slick({
 });
 // Brand Slider
 $('.brand-slider').slick({
+    autoplay:true,
     infinite: true,
     arrows: false,
     dots: false,
@@ -736,13 +737,13 @@ $('.related-product-active').slick({
     ]
 });
 /* --------------------------------------------------------
-    FAQ Accordion 
-* -------------------------------------------------------*/ 
+    FAQ Accordion
+* -------------------------------------------------------*/
   $('.card-header a').on('click', function() {
     $('.card').removeClass('actives');
     $(this).parents('.card').addClass('actives');
   });
-    
+
 /*--
     Project Filter
 -----------------------------------*/
@@ -773,7 +774,7 @@ $(window).load(function() {
     });
 
 })
-      
+
 /*-------------------------------------
     Direction Aware Hover Effect
 --------------------------------------*/
@@ -785,7 +786,7 @@ var daHover = function(){
     });
 };
 daHover();
-    
+
 /*--
     Tooltip Active
 -----------------------------------*/
@@ -794,11 +795,11 @@ $('[data-toggle="tooltip"]').tooltip({
         placement: 'top',
         container: 'body'
 });
- 
 
-/*----- 
+
+/*-----
 	Shipping Form Toggle
---------------------------------*/ 
+--------------------------------*/
 $('[data-shipping]').on('click', function(){
     if( $('[data-shipping]:checked').length > 0 ) {
         $('#shipping-form').slideDown();
@@ -806,17 +807,17 @@ $('[data-shipping]').on('click', function(){
         $('#shipping-form').slideUp();
     }
 })
-    
-/*----- 
+
+/*-----
 	Payment Method Select
 --------------------------------*/
 $('[name="payment-method"]').on('click', function(){
-    
+
     var $value = $(this).attr('value');
 
     $('.single-method p').slideUp();
     $('[data-method="'+$value+'"]').slideDown();
-    
+
 })
 /*----------------------------------
     ScrollUp Active
@@ -834,7 +835,7 @@ $('#sticky-sidebar').theiaStickySidebar({
   // Settings
   additionalMarginTop: 120
 })
-    
+
 /*--
 	MailChimp
 -----------------------------------*/
@@ -846,14 +847,14 @@ $('#mc-form').ajaxChimp({
 
 });
 function mailChimpResponse(resp) {
-	
+
 	if (resp.result === 'success') {
 		$('.mailchimp-success').html('' + resp.msg).fadeIn(900);
 		$('.mailchimp-error').fadeOut(400);
-		
+
 	} else if(resp.result === 'error') {
 		$('.mailchimp-error').html('' + resp.msg).fadeIn(900);
-	}  
+	}
 }
-    
-})(jQuery);	
+
+})(jQuery);
