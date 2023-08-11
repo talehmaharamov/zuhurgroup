@@ -1,45 +1,71 @@
 (function ($) {
     "use strict";
+    /*--
+    Commons Variables
+    -----------------------------------*/
     var windows = $(window);
+
+    /*--
+        Menu Sticky
+    -----------------------------------*/
     var sticky = $('.header-sticky');
 
-    windows.on('scroll', function () {
+    windows.on('scroll', function() {
         var scroll = windows.scrollTop();
         if (scroll < 300) {
             sticky.removeClass('is-sticky');
-        } else {
+        }else{
             sticky.addClass('is-sticky');
         }
     });
 
+    /*----------------------------
+       3. Sidebar Search Active
+    -----------------------------*/
     function sidebarSearch() {
         var searchTrigger = $('.header-search-toggle'),
             endTriggersearch = $('button.search-close'),
             container = $('.main-search-active');
 
-        searchTrigger.on('click', function () {
+        searchTrigger.on('click', function() {
             container.addClass('inside');
         });
 
-        endTriggersearch.on('click', function () {
+        endTriggersearch.on('click', function() {
             container.removeClass('inside');
         });
 
     };
     sidebarSearch();
 
+    /*---------------------------------
+        Light Gallery Activation
+    -----------------------------------*/
     $("#video-gallery, .product-gallery, .portfolio-gallery").lightGallery({
         selector: '.item',
     });
 
+    /*--------------------------
+        Counter Up
+    ---------------------------- */
     $('.counter').counterUp({
         delay: 70,
         time: 5000
     });
 
+    /*--------------------------------
+        Match Height Active
+    ----------------------------------*/
     $('.single-feature-list, .cta-6-content, .call-us').matchHeight();
 
+    /*------------------------------
+        Nice Select Active
+    ---------------------------------*/
     $('.nice-select').niceSelect();
+
+    /*---------------------------------
+        Minicart Activation
+    -----------------------------------*/
 
     $('.mini-cart').on('click', function (e) {
         e.preventDefault();
@@ -59,6 +85,10 @@
         })
     };
     clickBody();
+
+    /*--
+        Mobile Menu
+    -----------------------------------*/
     var mainMenuNav = $('.main-menu-mobile');
     mainMenuNav.meanmenu({
         meanScreenWidth: '991',
@@ -68,21 +98,31 @@
         meanRevealPosition: 'right',
         meanMenuCloseSize: '0',
     });
-    $('.progress-bar').each(function () {
+    /*--------------------------
+        Progress Bar Js
+    -----------------------------*/
+    $('.progress-bar').each(function(){
         var $this = $(this);
         var $width = $this.data('width');
 
         $this.css("width", $width);
 
     });
+    /*--
+        - Background Image
+    ------------------------------------------*/
     var $backgroundImage = $('.bg-image');
-    $backgroundImage.each(function () {
+    $backgroundImage.each(function() {
         var $this = $(this),
             $bgImage = $this.data('bg');
-        $this.css('background-image', 'url(' + $bgImage + ')');
+        $this.css('background-image', 'url('+$bgImage+')');
     });
+
+    /*---------------------------
+        Slider Range Active
+    -----------------------------*/
     var $rangeSlider = $('.range-slider');
-    $rangeSlider.each(function () {
+    $rangeSlider.each(function(){
         var $this = $(this),
             $min = $this.data('min'),
             $max = $this.data('max'),
@@ -95,13 +135,13 @@
             max: $max,
             value: $value,
             step: $step,
-            slide: function (event, ui) {
-                $uiHandle.html('<span>' + ui.value + '</span>');
+            slide: function(event, ui) {
+                $uiHandle.html( '<span>' + ui.value + '</span>');
             }
         });
         console.log($value);
         var $uiHandle = $this.children('.ui-slider-handle');
-        $uiHandle.html('<span>' + $this.slider('value') + '</span>');
+        $uiHandle.html( '<span>' + $this.slider('value') + '</span>');
     });
     /*-------------------------
         Radial Progress 02
@@ -123,11 +163,11 @@
     /*-------------------------------
         Datepicker Active
     --------------------------------*/
-    $("#datepicker").datepicker();
+    $( "#datepicker" ).datepicker();
     /*-------------------------------
         From Toggle Active
     --------------------------------*/
-    $('.next-btn').on('click', function (e) {
+    $('.next-btn').on('click', function(e){
         e.preventDefault();
         var $this = $(this);
 //    $this.css({"transform": "translateX(-300px)", "font-size": "200%"});
@@ -139,9 +179,9 @@
     /*-----------------------------------
         Count Down Active
     ----------------------------------*/
-    $('[data-countdown]').each(function () {
+    $('[data-countdown]').each(function() {
         var $this = $(this), finalDate = $(this).data('countdown');
-        $this.countdown(finalDate, function (event) {
+        $this.countdown(finalDate, function(event) {
             $this.html(event.strftime('<div class="countdown-wrap"><div class="day"><span class="number">%D</span><span class="text">days</span></div><div class="hour"><span class="number">%H</span><span class="text">hours</span></div><div class="minute"><span class="number">%M</span><span class="text">min</span></div><div class="second"><span class="number">%S</span><span class="text">sec</span></div></div>'));
         });
     });
@@ -613,6 +653,7 @@
     });
 // Brand Slider
     $('.brand-slider').slick({
+        autoplay:true,
         infinite: true,
         arrows: false,
         dots: false,
@@ -698,7 +739,7 @@
     /* --------------------------------------------------------
         FAQ Accordion
     * -------------------------------------------------------*/
-    $('.card-header a').on('click', function () {
+    $('.card-header a').on('click', function() {
         $('.card').removeClass('actives');
         $(this).parents('.card').addClass('actives');
     });
@@ -706,7 +747,7 @@
     /*--
         Project Filter
     -----------------------------------*/
-    $(window).load(function () {
+    $(window).load(function() {
         $('.masonry__wrap').imagesLoaded(function () {
 
             // filter items on button click
@@ -737,10 +778,10 @@
     /*-------------------------------------
         Direction Aware Hover Effect
     --------------------------------------*/
-    var daHover = function () {
-        $('.daHover').each(function () {
+    var daHover = function(){
+        $('.daHover').each(function(){
             $(this).hoverdir({
-                hoverElem: '.daHoverElem'
+                hoverElem : '.daHoverElem'
             });
         });
     };
@@ -759,8 +800,8 @@
     /*-----
         Shipping Form Toggle
     --------------------------------*/
-    $('[data-shipping]').on('click', function () {
-        if ($('[data-shipping]:checked').length > 0) {
+    $('[data-shipping]').on('click', function(){
+        if( $('[data-shipping]:checked').length > 0 ) {
             $('#shipping-form').slideDown();
         } else {
             $('#shipping-form').slideUp();
@@ -770,12 +811,12 @@
     /*-----
         Payment Method Select
     --------------------------------*/
-    $('[name="payment-method"]').on('click', function () {
+    $('[name="payment-method"]').on('click', function(){
 
         var $value = $(this).attr('value');
 
         $('.single-method p').slideUp();
-        $('[data-method="' + $value + '"]').slideDown();
+        $('[data-method="'+$value+'"]').slideDown();
 
     })
     /*----------------------------------
@@ -805,16 +846,14 @@
         url: 'http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef'
 
     });
-
     function mailChimpResponse(resp) {
 
         if (resp.result === 'success') {
             $('.mailchimp-success').html('' + resp.msg).fadeIn(900);
             $('.mailchimp-error').fadeOut(400);
 
-        } else if (resp.result === 'error') {
+        } else if(resp.result === 'error') {
             $('.mailchimp-error').html('' + resp.msg).fadeIn(900);
         }
     }
-
 })(jQuery);
