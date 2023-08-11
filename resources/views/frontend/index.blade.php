@@ -2,7 +2,6 @@
 @section('front')
     @include('frontend.layouts.slider')
 
-
-    @include('frontend.layouts.partners')
     @include('frontend.layouts.faq')
+    @include('frontend.layouts.partners')
 @endsection
