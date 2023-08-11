@@ -1,4 +1,4 @@
-<div class="col-lg-12 order-lg-2 order-1">
+<div style='padding:0 15px' class="order-lg-2 order-1">
     <div class="faq-detail mb-sm-60 mb-xs-50">
         <div class="content">
             <div class="row">

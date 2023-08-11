@@ -1,1 +1,1 @@
-gead.az
+zuhurgroup.az

@@ -1,12 +1,12 @@
 @extends('master.frontend')
 @section('front')
     @foreach($abouts as $about)
-        <div class="video-section section pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+        <div class="video-section section ">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="video-left-img">
-                            <img class="w-100" src="{{asset($about->photo)}}"
+                            <img style='max-height:600px' class="w-100" src="{{asset($about->photo)}}"
                                  alt="{{$about->translate(app()->getLocale())->alt ?? __('backend.translation-not-found')}}">
                         </div>
                     </div>
