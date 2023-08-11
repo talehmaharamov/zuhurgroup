@@ -23,16 +23,16 @@
         </div>
     </div>
     <div
-        class="service-section section pt-100 pt-lg-80 pt-md-70 pt-sm-15 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+        class="service-section section pt-100 pt-lg-50 pt-md-30 pt-sm-15 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div style='padding:0 !important'  class="col-lg-12">
                     <div class="service-detail">
                         <div class="service-gallery mb-35">
-                            <div class="item"><img src="{{ asset($content->photo)  }}"
+                            <div class="item"><img style='max-height:600px'  src="{{ asset($content->photo)  }}"
                                                    alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}"></div>
                             @foreach($content->photos as $photo)
-                                <div class="item"><img src="{{ asset($photo->photo) }}"
+                                <div class="item"><img style='max-height:600px' src="{{ asset($photo->photo) }}"
                                                        alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}">
                                 </div>
                             @endforeach

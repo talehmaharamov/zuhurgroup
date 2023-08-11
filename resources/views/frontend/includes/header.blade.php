@@ -14,7 +14,7 @@
 
 <header class="header header-transparent header-sticky d-none d-lg-block">
     <div class="header-top">
-        <div class="container">
+        <div  class="container">
             <div class="row justify-content-between">
                 <div class="header-top-links col">
                     <ul>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="header-bottom menu-right">
-        <div class="container">
+        <div  class="container">
             <div class="row">
 
                 <div class="col-lg-2 col-md-4 col-6 mt-20 mb-20">
@@ -118,8 +118,8 @@
 </header>
 
 <header class="header-mobile d-block d-lg-none">
-    <div class="header-bottom menu-right">
-        <div class="container">
+    <div  class="header-bottom menu-right">
+        <div style='padding:0' class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-4 col-6 mt-20 mb-20">
                     <div class="logo">
