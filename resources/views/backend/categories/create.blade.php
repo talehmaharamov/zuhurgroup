@@ -39,12 +39,28 @@
                                                                id="name{{ $lan->code }}"
                                                                class="form-control" required=""
                                                                placeholder="@lang('backend.name')">
-                                                        <div class="valid-feedback">
-                                                            @lang('backend.name') @lang('messages.is-correct')
-                                                        </div>
-                                                        <div class="invalid-feedback">
-                                                            @lang('backend.name') @lang('messages.not-correct')
-                                                        </div>
+                                                        {!! validation_response('backend.name') !!}
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.description')</label>
+                                                        <textarea name="description[{{ $lan->code }}]"
+                                                                  id="elm{{$lan->code}}1"
+                                                                  class="form-control"
+                                                                  placeholder="@lang('backend.description')"></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.title')(Meta)</label>
+                                                        <textarea name="meta_title[{{ $lan->code }}]"
+                                                                  rows="2"
+                                                                  class="form-control"
+                                                                  placeholder="@lang('backend.title')(Meta)"></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.description')(Meta)</label>
+                                                        <textarea name="meta_description[{{ $lan->code }}]"
+                                                                  rows="6"
+                                                                  class="form-control"
+                                                                  placeholder="@lang('backend.description')(Meta)"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -56,7 +72,7 @@
                                             {!! validation_response('backend.slug') !!}
                                         </div>
                                         <div class="mb-3">
-                                            <label>@lang('backend.parent')</label>
+                                            <label>@lang('backend.parent') @lang('backend.category')</label>
                                             <select name="parent" type="text" class="form-control">
                                                 <option value="">-</option>
                                                 @foreach($categories as $category)
@@ -98,4 +114,5 @@
             $('#nameen').on('input', generateSlugFromName);
         });
     </script>
+    @include('backend.templates.components.tiny')
 @endsection

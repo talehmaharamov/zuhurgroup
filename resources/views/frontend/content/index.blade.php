@@ -22,12 +22,30 @@
             </div>
         </div>
     </div>
-
     <div
         class="blog-grid-section section bg-gray pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-60 pb-lg-40 pb-md-30 pb-sm-20 pb-xs-10">
         <div class="container">
+            <div class="row align-items-center mb-45">
+                <div class="col-md-6">
+                    <div class="result-count">
+                        <p>{{ __('pagination.showing_results', ['firstItem' => $contents->firstItem(), 'lastItem' => $contents->lastItem(), 'total' => $contents->total() ]) }}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="shop-filter-right">
+                        <div class="sidebar-search-form">
+                            <form method="post" action="#">
+                                <input type="text" name="search" placeholder="@lang('backend.search')">
+                                <input hidden="" value="{{ $category->id }}">
+                                <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
-                @foreach($category->content as $content)
+                @foreach($contents as $content)
                     <div class="col-lg-4 col-md-6">
                         <div class="single-blog">
                             <div class="blog-image">
@@ -44,7 +62,7 @@
                                     <li><i class="fa fa-folder-open"></i><a
                                             href="#">{{ $category->translate(app()->getLocale())->name ?? '' }}</a></li>
                                 </ul>
-                                <p>{!! $category->translate(app()->getLocale())->short_description ?? '' !!}</p>
+                                <p>{!! $content->translate(app()->getLocale())->short_description ?? '' !!}</p>
                                 <a class="read-more-btn"
                                    href="{{ route('frontend.selectedContent',$content->slug) }}">@lang('backend.read-more')
                                     <i
@@ -57,16 +75,14 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <!--Pagination Start-->
                     <div class="page-pagination">
                         <ul>
-                            @foreach($contents->links() as $paginatePage)
-                                <li class="@if($loop->first) active @endif"><a href="#">{{$paginatePage}}</a></li>
-                            @endforeach
-                            <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                            {{ $contents->links() }}
                         </ul>
                     </div>
-                    <!--Pagination End-->
+                    <div id="category-p">
+                        {!! $category->translate(app()->getLocale())->description ?? '' !!}
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,4 @@
 @charset "UTF-8";
-
-
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,500,700");
 
 *, *::after, *::before {
@@ -10,6 +8,11 @@
 
 html, body, .site-wrapper {
     height: 100%;
+}
+
+#category-p {
+    color: black !important;
+    word-wrap: break-word !important;
 }
 
 .whats-float, .whats-float1 {
@@ -12035,13 +12038,7 @@ a.read-more-btn:hover i {
 }
 
 
-
-
-
-
-
-
-@media only screen and (max-width: 1200px)  {
+@media only screen and (max-width: 1200px) {
     .main-menu > ul > li > a {
         font-size: 12px;
         letter-spacing: 1px;
@@ -12050,7 +12047,7 @@ a.read-more-btn:hover i {
 }
 
 
-@media only screen and (max-width: 991px)  {
+@media only screen and (max-width: 991px) {
     .logo img {
         width: 30% !important;
     }
@@ -12058,7 +12055,7 @@ a.read-more-btn:hover i {
 }
 
 
-@media only screen and (max-width: 767px)  {
+@media only screen and (max-width: 767px) {
     .logo img {
         width: 25% !important;
     }
@@ -12066,26 +12063,27 @@ a.read-more-btn:hover i {
 }
 
 
-
-@media only screen and (max-width: 575px)  {
+@media only screen and (max-width: 575px) {
     .logo img {
         width: 32% !important;
     }
+
     .slick-track {
         height: 350px !important;
 
     }
+
     .slick-track img {
         height: 100%;
     }
 
 }
 
-.header-cart{
+.header-cart {
     margin-left: 0 !important;
-    margin-right: 5px  !important;
+    margin-right: 5px !important;
 }
 
-.header-search  {
+.header-search {
     margin-right: 30px !important;
 }
