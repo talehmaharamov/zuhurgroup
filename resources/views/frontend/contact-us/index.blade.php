@@ -1,4 +1,5 @@
 @extends('master.frontend')
+@section('title',__('title.contact').' | ')
 @section('front')
     <div
         class="contact-section section pt-95 pt-lg-75 pt-md-65 pt-sm-55 pt-xs-45 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
