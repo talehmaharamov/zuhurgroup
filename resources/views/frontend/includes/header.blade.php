@@ -144,7 +144,7 @@
                                     <ul class="sub-menu">
                                         @foreach($mc->subcategories as $mcs)
                                             <li>
-                                                <a href="{{ route('frontend.selectedCategory',$mc->slug) }}">{{ $mcs->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</a>
+                                                <a href="{{ route('frontend.selectedCategory',$mcs->slug) }}">{{ $mcs->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</a>
                                             </li>
                                         @endforeach
                                     </ul>

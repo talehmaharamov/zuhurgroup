@@ -21,18 +21,22 @@ class HomeController extends Controller
         return view('frontend.index', get_defined_vars());
     }
 
-    public function search($categoryID, $keyword)
+    public function search(Request $request)
     {
+        $categoryID = $request->category;
+        $keyword = $request->keyword;
         $category = Category::where('id', $categoryID)->with('content')->first();
-        $contents = Content::where('category_id', $categoryID)
-            ->where('slug', 'LIKE', '%' . $keyword . '%')
-            ->whereTranslation('name', 'LIKE', '%' . $keyword . '%')
-            ->whereTranslation('description', 'LIKE', '%' . $keyword . '%')
-            ->whereTranslation('meta_description', 'LIKE', '%' . $keyword . '%')
-            ->whereTranslation('meta_title', 'LIKE', '%' . $keyword . '%')
-            ->whereTranslation('alt', 'LIKE', '%' . $keyword . '%')
+        $contents = Content::when($keyword, function ($query) use ($keyword) {
+            return $query->orWhere('slug', 'LIKE', '%' . $keyword . '%')
+                ->orWhereTranslation('name', 'LIKE', '%' . $keyword . '%')
+                ->orWhereTranslation('content', 'LIKE', '%' . $keyword . '%')
+                ->orWhereTranslation('meta_description', 'LIKE', '%' . $keyword . '%')
+                ->orWhereTranslation('meta_title', 'LIKE', '%' . $keyword . '%')
+                ->orWhereTranslation('alt', 'LIKE', '%' . $keyword . '%');
+        })
+            ->where('category_id', $categoryID)
             ->paginate(9);
-        return view('frontend.content.index',get_defined_vars());
+        return view('frontend.content.index', get_defined_vars());
     }
 
     public function sendMessage(Request $request)

@@ -13,7 +13,15 @@ html, body, .site-wrapper {
 #category-p {
     color: black !important;
     word-wrap: break-word !important;
+    max-height: 6em; /* This will limit the height to approximately three lines */
+    overflow: hidden;
+    position: relative;
 }
+
+#category-p.expanded {
+    max-height: none;
+}
+
 
 .whats-float, .whats-float1 {
     z-index: 100000 !important;
