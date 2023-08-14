@@ -4,4 +4,5 @@
 
     @include('frontend.layouts.faq')
     @include('frontend.layouts.partners')
+{{--    @include('frontend.tawkto.tawkto')--}}
 @endsection

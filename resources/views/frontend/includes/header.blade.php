@@ -1,13 +1,13 @@
 <div class="whats-float">
-    <a href="https://wa.me/{{ settings('whatsapp') }}"
+    <a href="https://wa.me/{{ settings('phone') }}"
        target="_blank">
-        <i class="fa fa-whatsapp"></i><span>@lang('Whatsapp')<br><small>{{ settings('whatsapp') }}</small></span>
+        <i class="fa fa-whatsapp"></i><span>@lang('Whatsapp')<br><small>{{ settings('phone') }}</small></span>
     </a>
 </div>
 <div class="whats-float1">
-    <a href="https://wa.me/{{ settings('whatsapp') }}"
+    <a href="{{ settings('instagram') }}"
        target="_blank">
-        <i class="fa fa-instagram"></i><span>@lang('Instagram')<br><small>{{ settings('instagram') }}</small></span>
+        <i class="fa fa-instagram"></i><span>@lang('Instagram')<br><small>{{ str_replace('https://instagram.com/','@',settings('instagram')) }}</small></span>
     </a>
 </div>
 
