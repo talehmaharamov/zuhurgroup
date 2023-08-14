@@ -1,4 +1,8 @@
 @extends('master.frontend')
+@section('title',$category->translate(app()->getLocale())->meta_title ?? " ".' | ')
+@section('meta')
+    <meta name="description" content="{{ $category->translate(app()->getLocale())->meta_description ?? '' }}">
+@endsection
 @section('front')
     <div class="breadcrumb-section section bg-image pt-75 pb-75 pt-sm-55 pb-sm-55 pt-xs-45 pb-xs-45"
          data-bg="{{asset('frontend/images/bg/bt-bg.png')}}">
@@ -27,8 +31,9 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-blog">
                             <div class="blog-image">
-                                <a href="{{ route('frontend.selectedContent',$content->slug) }}"><img src="{{ asset($content->photo) }}"
-                                                                alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}"></a>
+                                <a href="{{ route('frontend.selectedContent',$content->slug) }}"><img
+                                        src="{{ asset($content->photo) }}"
+                                        alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}"></a>
                             </div>
                             <div class="blog-content">
                                 <h2>
@@ -40,7 +45,9 @@
                                             href="#">{{ $category->translate(app()->getLocale())->name ?? '' }}</a></li>
                                 </ul>
                                 <p>{!! $category->translate(app()->getLocale())->short_description ?? '' !!}</p>
-                                <a class="read-more-btn" href="{{ route('frontend.selectedContent',$content->slug) }}">@lang('backend.read-more')<i
+                                <a class="read-more-btn"
+                                   href="{{ route('frontend.selectedContent',$content->slug) }}">@lang('backend.read-more')
+                                    <i
                                         class="fa fa-chevron-right"></i></a>
                             </div>
                         </div>
