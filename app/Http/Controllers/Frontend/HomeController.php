@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Content;
 use App\Models\Partner;
 use App\Models\Slider;
 use Exception;
@@ -17,6 +19,20 @@ class HomeController extends Controller
         $partners = Partner::all();
         $sliders = Slider::where('status', 1)->orderBy('order', 'asc')->get();
         return view('frontend.index', get_defined_vars());
+    }
+
+    public function search($categoryID, $keyword)
+    {
+        $category = Category::where('id', $categoryID)->with('content')->first();
+        $contents = Content::where('category_id', $categoryID)
+            ->where('slug', 'LIKE', '%' . $keyword . '%')
+            ->whereTranslation('name', 'LIKE', '%' . $keyword . '%')
+            ->whereTranslation('description', 'LIKE', '%' . $keyword . '%')
+            ->whereTranslation('meta_description', 'LIKE', '%' . $keyword . '%')
+            ->whereTranslation('meta_title', 'LIKE', '%' . $keyword . '%')
+            ->whereTranslation('alt', 'LIKE', '%' . $keyword . '%')
+            ->paginate(9);
+        return view('frontend.content.index',get_defined_vars());
     }
 
     public function sendMessage(Request $request)
