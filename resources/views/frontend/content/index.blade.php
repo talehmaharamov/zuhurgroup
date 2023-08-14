@@ -28,15 +28,20 @@
             <div class="row align-items-center mb-45">
                 <div class="col-md-6">
                     <div class="result-count">
-                        <p>{{ __('pagination.showing_results', ['firstItem' => $contents->firstItem(), 'lastItem' => $contents->lastItem(), 'total' => $contents->total() ]) }}</p>
+                        @if(!empty($keyword))
+                            <p>@lang('backend.search-result'): {{$keyword}}</p>
+                        @else
+                            <p>{{ __('pagination.showing_results', ['firstItem' => $contents->firstItem(), 'lastItem' => $contents->lastItem(), 'total' => $contents->total() ]) }}</p>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="shop-filter-right">
                         <div class="sidebar-search-form">
-                            <form method="post" action="#">
-                                <input type="text" name="search" placeholder="@lang('backend.search')">
-                                <input hidden="" value="{{ $category->id }}">
+                            <form method="post" action="{{ route('frontend.search') }}">
+                                @csrf
+                                <input type="text" name="keyword" placeholder="@lang('backend.search')">
+                                <input hidden="" value="{{ $category->id }}" name="category">
                                 <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -45,33 +50,42 @@
             </div>
 
             <div class="row">
-                @foreach($contents as $content)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-blog">
-                            <div class="blog-image">
-                                <a href="{{ route('frontend.selectedContent',$content->slug) }}"><img
-                                        src="{{ asset($content->photo) }}"
-                                        alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}"></a>
-                            </div>
-                            <div class="blog-content">
-                                <h2>
-                                    <a href="{{ route('frontend.selectedContent',$content->slug) }}">{{ $content->translate(app()->getLocale())->name ?? '' }}</a>
-                                </h2>
-                                <ul class="meta">
-                                    <li><i class="fa fa-clock-o"></i>{{ $content->created_at->format('d.m.Y')  }}</li>
-                                    <li><i class="fa fa-folder-open"></i><a
-                                            href="#">{{ $category->translate(app()->getLocale())->name ?? '' }}</a></li>
-                                </ul>
-                                <p>{!! $content->translate(app()->getLocale())->short_description ?? '' !!}</p>
-                                <a class="read-more-btn"
-                                   href="{{ route('frontend.selectedContent',$content->slug) }}">@lang('backend.read-more')
-                                    <i
-                                        class="fa fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-
+                @if($contents->isEmpty())
+                    <div class="result-count">
+                        <p>@lang('messages.info-not-found')</p>
                     </div>
-                @endforeach
+                @else
+                    @foreach($contents as $content)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-blog">
+                                <div class="blog-image">
+                                    <a href="{{ route('frontend.selectedContent',$content->slug) }}"><img
+                                            src="{{ asset($content->photo) }}"
+                                            alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <h2>
+                                        <a href="{{ route('frontend.selectedContent',$content->slug) }}">{{ $content->translate(app()->getLocale())->name ?? '' }}</a>
+                                    </h2>
+                                    <ul class="meta">
+                                        <li><i class="fa fa-clock-o"></i>{{ $content->created_at->format('d.m.Y')  }}
+                                        </li>
+                                        <li><i class="fa fa-folder-open"></i><a
+                                                href="#">{{ $category->translate(app()->getLocale())->name ?? '' }}</a>
+                                        </li>
+                                    </ul>
+                                    <p>{!! $content->translate(app()->getLocale())->short_description ?? '' !!}</p>
+                                    <a class="read-more-btn"
+                                       href="{{ route('frontend.selectedContent',$content->slug) }}">@lang('backend.read-more')
+                                        <i
+                                            class="fa fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    @endforeach
+                @endif
+
             </div>
             <div class="row">
                 <div class="col-12">
@@ -82,9 +96,25 @@
                     </div>
                     <div id="category-p">
                         {!! $category->translate(app()->getLocale())->description ?? '' !!}
+                        <div class="expanded">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+{{--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
+{{--    <script>--}}
+{{--        $(document).ready(function() {--}}
+{{--            var contentDiv = $("#category-p");--}}
+{{--            if (contentDiv[0].scrollHeight > contentDiv[0].clientHeight) {--}}
+{{--                contentDiv.addClass("expanded");--}}
+{{--                contentDiv.html('<a href="#">Click to expand</a>');--}}
+{{--            }--}}
+{{--        });--}}
+{{--    </script>--}}
+
 @endsection

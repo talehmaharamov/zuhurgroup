@@ -10,7 +10,7 @@ Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLangua
         return view('frontend.contact-us.index');
     })->name('contact-us-page');
     Route::get('/categories/{slug}', [App\Http\Controllers\Frontend\CategoryController::class, 'show'])->name('selectedCategory');
-    Route::get('/search/{category}/{keyword}', [\App\Http\Controllers\Frontend\HomeController::class, 'search'])->name('search');
+    Route::post('/search', [\App\Http\Controllers\Frontend\HomeController::class, 'search'])->name('search');
     Route::get('c/{contentSlug}', [App\Http\Controllers\Frontend\ContentController::class, 'show'])->name('selectedContent');
     Route::get('/change-language/{dil}', [LChangeLan::class, 'frontLanguage'])->name('frontLanguage');
     Route::get('create-order', [FHome::class, 'createOrder'])->name('createOrder');

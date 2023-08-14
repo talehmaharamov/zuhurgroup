@@ -1,5 +1,5 @@
-{{--@extends('master.frontend')--}}
-@section('front1')
+@extends('master.frontend')
+@section('front')
     <section class="error-404 section-padding pb-5">
         <div class="container">
             <div class="row justify-content-center align-items-center">
