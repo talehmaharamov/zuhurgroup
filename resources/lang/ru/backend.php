@@ -1,6 +1,4 @@
-<?php
-
-return array (
+<?php return array (
   'about' => 'О нас',
   'actions' => 'Действия',
   'active' => 'Активный',
@@ -177,7 +175,6 @@ return array (
   'video' => 'Видео',
   'views' => 'Просмотры',
   'voen' => 'Военный',
-  'why-gefen' => 'Почему GEFEN',
   'work-mode' => 'Режим работы',
   'writer' => 'Колумнисты',
   'writers' => 'Писатели',
@@ -188,4 +185,5 @@ return array (
   'your-item-message' => 'Ваше объявление ожидает рассмотрения. Сохраните номер объявления, чтобы отредактировать или удалить объявление.',
   'your-item-number' => 'Номер вашего объявления',
   'zuhur' => 'Зухур Групп',
+  'search-placeholder' => 'Нажмите Enter для поиска или ESC, чтобы закрыть',
 );

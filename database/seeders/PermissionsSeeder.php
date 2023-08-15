@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
-
 class PermissionsSeeder extends Seeder
 {
     public function run(): void
@@ -39,7 +36,6 @@ class PermissionsSeeder extends Seeder
             'mail index',
             'mail delete',
         ];
-
         foreach ($singlePermissions as $single) {
             $permission = new \Spatie\Permission\Models\Permission();
             $permission->name = $single;

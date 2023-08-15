@@ -40,6 +40,7 @@ class CategoryController extends Controller
                 $category->slug = $request->slug;
                 $category->save();
             }
+            $category->is_home = $request->has('is_home') ? 1 : 0;
             foreach (active_langs() as $lang) {
                 $translation = new CategoryTranslation();
                 $translation->locale = $lang->code;
@@ -80,6 +81,7 @@ class CategoryController extends Controller
                     $category->translate($lang->code)->meta_description = $request->meta_description[$lang->code];
                     $category->translate($lang->code)->meta_title = $request->meta_title[$lang->code];
                 }
+                $category->is_home = $request->has('is_home') ? 1 : 0;
                 $category->parent_id = $request->parent;
                 $category->slug = $request->slug;
                 $category->save();

@@ -10,8 +10,6 @@
         <i class="fa fa-instagram"></i><span>@lang('Instagram')<br><small>{{ str_replace('https://instagram.com/','@',settings('instagram')) }}</small></span>
     </a>
 </div>
-
-
 <header class="header header-transparent header-sticky d-none d-lg-block">
     <div class="header-top">
         <div class="container">
@@ -30,21 +28,17 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="header-bottom menu-right">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-2 col-md-4 col-6 mt-20 mb-20">
                     <div class="logo">
                         <a href="{{ route('frontend.index') }}"><img src="{{ asset('backend/images/logo.png') }}"
                                                                      style="width: 50%;" alt=""></a>
                     </div>
                 </div>
-
-                <!--Menu start-->
                 <div class="col-lg-10 col-md-8 col-6 d-flex justify-content-end position-static">
                     <nav class="main-menu">
                         <ul>
@@ -109,27 +103,25 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="header-search">
                         <button class="header-search-toggle"><i class="fa fa-search"></i></button>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
 </header>
-
 <header class="header-mobile d-block d-lg-none">
     <div class="header-bottom menu-right">
         <div style='padding:0' class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-4 col-6 mt-20 mb-20">
                     <div class="logo">
-                        <a href="{{ route('frontend.index') }}"><img src="{{ asset('backend/images/logo.png') }}"
-                                                                     style="width: 38%;"
-                                                                     alt="@lang('seo.logo-alt')"></a>
+                        <a href="{{ route('frontend.index') }}">
+                            <img src="{{ asset('backend/images/logo.png') }}"
+                                 style="width: 38%;"
+                                 alt="@lang('seo.logo-alt')">
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-8 col-6 d-flex justify-content-end position-static">
@@ -178,17 +170,28 @@
                         <button class="header-search-toggle"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
-                <!--Menu end-->
             </div>
-
-            <!--Mobile Menu start-->
             <div class="row">
                 <div class="col-12 d-flex d-lg-none">
                     <div class="mobile-menu"></div>
                 </div>
             </div>
-            <!--Mobile Menu end-->
-
         </div>
     </div>
 </header>
+<div class="main-search-active">
+    <div class="sidebar-search-icon">
+        <button class="search-close"><i class="pe-7s-close"></i></button>
+    </div>
+    <div class="sidebar-search-input">
+        <form action="#" method="post">
+            <div class="form-search">
+                <input id="search" name="keyword" class="input-text" value="" placeholder="" type="search">
+                <button>
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </form>
+        <p class="form-description">@lang('backend.search-placeholder')</p>
+    </div>
+</div>
