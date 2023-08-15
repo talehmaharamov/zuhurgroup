@@ -44,6 +44,19 @@ class HomeController extends Controller
         return view('frontend.content.index', get_defined_vars());
     }
 
+    public function searchByKeyword(Request $request)
+    {
+        $keyword = $request->keyword;
+        $contents = Content::where('slug', 'LIKE', '%' . $keyword . '%')
+            ->orWhereTranslation('name', 'LIKE', '%' . $keyword . '%')
+            ->orWhereTranslation('content', 'LIKE', '%' . $keyword . '%')
+            ->orWhereTranslation('meta_description', 'LIKE', '%' . $keyword . '%')
+            ->orWhereTranslation('meta_title', 'LIKE', '%' . $keyword . '%')
+            ->orWhereTranslation('alt', 'LIKE', '%' . $keyword . '%')
+            ->paginate(9);
+        return view('frontend.content.search',get_defined_vars());
+    }
+
     public function sendMessage(Request $request)
     {
         try {
