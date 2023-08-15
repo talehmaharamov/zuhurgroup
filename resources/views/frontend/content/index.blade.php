@@ -68,10 +68,12 @@
                                         <a href="{{ route('frontend.selectedContent',$content->slug) }}">{{ $content->translate(app()->getLocale())->name ?? '' }}</a>
                                     </h2>
                                     <ul class="meta">
-                                        <li><i class="fa fa-clock-o"></i>{{ $content->created_at->format('d.m.Y')  }}
+                                        <li>
+                                            <i class="fa fa-clock-o"></i>{{ $content->created_at->format('d.m.Y')  }}
                                         </li>
-                                        <li><i class="fa fa-folder-open"></i><a
-                                                href="#">{{ $category->translate(app()->getLocale())->name ?? '' }}</a>
+                                        <li>
+                                            <i class="fa fa-folder-open"></i>
+                                            <a href="#">{{ $category->translate(app()->getLocale())->name ?? '' }}</a>
                                         </li>
                                     </ul>
                                     <p>{!! $content->translate(app()->getLocale())->short_description ?? '' !!}</p>
@@ -106,15 +108,15 @@
     </div>
 @endsection
 @section('scripts')
-{{--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
-{{--    <script>--}}
-{{--        $(document).ready(function() {--}}
-{{--            var contentDiv = $("#category-p");--}}
-{{--            if (contentDiv[0].scrollHeight > contentDiv[0].clientHeight) {--}}
-{{--                contentDiv.addClass("expanded");--}}
-{{--                contentDiv.html('<a href="#">Click to expand</a>');--}}
-{{--            }--}}
-{{--        });--}}
-{{--    </script>--}}
+    {{--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
+    {{--    <script>--}}
+    {{--        $(document).ready(function() {--}}
+    {{--            var contentDiv = $("#category-p");--}}
+    {{--            if (contentDiv[0].scrollHeight > contentDiv[0].clientHeight) {--}}
+    {{--                contentDiv.addClass("expanded");--}}
+    {{--                contentDiv.html('<a href="#">Click to expand</a>');--}}
+    {{--            }--}}
+    {{--        });--}}
+    {{--    </script>--}}
 
 @endsection

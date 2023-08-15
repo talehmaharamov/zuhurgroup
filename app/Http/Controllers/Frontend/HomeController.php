@@ -18,6 +18,11 @@ class HomeController extends Controller
     {
         $partners = Partner::all();
         $sliders = Slider::where('status', 1)->orderBy('order', 'asc')->get();
+        $carouselCategories = Category::where('parent_id', '<>', null)
+            ->where('is_home', 1)
+            ->with('content')
+            ->has('content', '>=', 3)
+            ->get();
         return view('frontend.index', get_defined_vars());
     }
 
@@ -41,7 +46,6 @@ class HomeController extends Controller
 
     public function sendMessage(Request $request)
     {
-//        dd($request->all());
         try {
             $receiver = settings('mail_receiver');
             $contact = new Contact();
@@ -52,17 +56,17 @@ class HomeController extends Controller
             $contact->read_status = 0;
             $contact->message = $request->message;
             $contact->save();
-//            $data = [
-//                'name' => $contact->name,
-//                'phone' => $contact->phone,
-//                'email' => $contact->email,
-//                'subject' => $contact->subject,
-//                'msg' => $contact->message
-//            ];
-//            Mail::send('backend.mail.send', $data, function ($message) use ($receiver) {
-//                $message->to($receiver);
-//                $message->subject(__('backend.you-have-new-message'));
-//            });
+            $data = [
+                'name' => $contact->name,
+                'phone' => $contact->phone,
+                'email' => $contact->email,
+                'subject' => $contact->subject,
+                'msg' => $contact->message
+            ];
+            Mail::send('backend.mail.send', $data, function ($message) use ($receiver) {
+                $message->to($receiver);
+                $message->subject(__('backend.you-have-new-message'));
+            });
             alert()->success(__('messages.success'));
             return redirect(route('frontend.contact-us-page'));
         } catch (Exception $e) {

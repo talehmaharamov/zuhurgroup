@@ -1,6 +1,4 @@
-<?php
-
-return array (
+<?php return array (
   'about' => 'Haqqımızda',
   'actions' => 'Hərəkətlər',
   'active' => 'Aktiv',
@@ -212,7 +210,6 @@ return array (
   'teams' => 'Komandalar',
   'teams-details' => 'Komanda Məlumatları',
   'teams-elements' => 'Komanda Elementləri',
-  'test' => '',
   'time' => 'Vaxt',
   'title' => 'Başlıq',
   'translation-not-found' => 'Tərcümə tapılmadı!',
@@ -241,4 +238,5 @@ return array (
   'your-item-message' => 'Elanınız nəzərdən keçirilməsini gözləyir.Elanı redaktə etmək və silmək üçün elanın nömrəsini yadda saxlayın.',
   'your-item-number' => 'Elanınızın nömrəsi',
   'zuhur' => 'Zühur Group',
+  'search-placeholder' => 'Axtarmaq üçün enter düyməsini və ya bağlamaq üçün ESC düyməsini basın',
 );

@@ -13,16 +13,14 @@ class SettingSeeder extends Seeder
     {
         $settings = [
             ['name' => 'phone', 'link' => '+994512951211'],
-            ['name' => 'facebook', 'link' => 'https://facebook.com/gead.az'],
-            ['name' => 'instagram', 'link' => 'https://instagram.com/gead_ib'],
-            ['name' => 'twitter', 'link' => 'https://twitter.com/GEAD_ib'],
-            ['name' => 'youtube', 'link' => 'https://www.youtube.com/channel/UCxn8MoGUHPlGni6IbugpdNQ'],
-            ['name' => 'email', 'link' => 'gead.mail@gmail.com'],
-            ['name' => 'address_az', 'link' => 'Bakı ş. Yasamal r. Mirəli Seyidov 31/38'],
-            ['name' => 'address_en', 'link' => 'Baku Yasamal r. Mirali Seyidov 31/38'],
-            ['name' => 'address_ru', 'link' => 'Баку Ясамал р. Мирали Сеидов 31/38'],
+            ['name' => 'facebook', 'link' => 'https://facebook.com'],
+            ['name' => 'instagram', 'link' => 'https://www.instagram.com/zuhur_inshaat.mmc/'],
+            ['name' => 'youtube', 'link' => 'https://www.youtube.com'],
+            ['name' => 'email', 'link' => 'info@zuhurgroup.az'],
+            ['name' => 'address_az', 'link' => 'Zühur Qrupu, Mirəli Qaşqay, Bakı'],
+            ['name' => 'address_en', 'link' => 'Zühur Group, Mirali Gashgai, Baku'],
+            ['name' => 'address_ru', 'link' => 'Zühur Group, Мирали Гашгай, Баку'],
             ['name' => 'mail_receiver', 'link' => 'elmir_567@mail.ru'],
-
         ];
         foreach ($settings as $key => $setting) {
             $set = new Setting();

@@ -81,19 +81,31 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <div class="mb-5 text-center">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                       @if($category->is_home == 1) checked @endif
+                                                       id="invalidCheck" name="is_home">
+                                                <label class="form-check-label" for="invalidCheck">
+                                                    @lang('backend.home-page')
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-5 text-center">
+                                            <div>
+                                                <button type="submit"
+                                                        class="btn btn-primary waves-effect waves-light me-1">
+                                                    @lang('backend.submit')
+                                                </button>
+                                                <a href="{{ url()->previous() }}" type="button"
+                                                   class="btn btn-secondary waves-effect">
+                                                    @lang('backend.cancel')
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="mb-5 text-center">
-                                    <div>
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
-                                            @lang('backend.submit')
-                                        </button>
-                                        <a href="{{ url()->previous() }}" type="button"
-                                           class="btn btn-secondary waves-effect">
-                                            @lang('backend.cancel')
-                                        </a>
-                                    </div>
-                                </div>
+
                             </form>
                         </div>
                     </div>
