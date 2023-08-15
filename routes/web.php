@@ -19,6 +19,7 @@ Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLangua
     Route::get('/', [FHome::class, 'index'])->name('index');
     Route::get('/about', [FAbout::class, 'index'])->name('about');
     Route::post('/search', [FHome::class, 'search'])->name('search');
+    Route::post('general/search', [FHome::class, 'searchByKeyword'])->name('searchByKeyword');
     Route::post('/newsletter-add-new', [FHome::class, 'newsletter'])->name('newsletter');
     Route::get('/newsletter/{id}/{token}', [FHome::class, 'verifyMail'])->name('verifyMail');
     Route::get('18', [FHome::class, 'agreeTerm'])->name('18');

@@ -184,9 +184,10 @@
         <button class="search-close"><i class="pe-7s-close"></i></button>
     </div>
     <div class="sidebar-search-input">
-        <form action="#" method="post">
+        <form action="{{ route('frontend.searchByKeyword') }}" method="post">
+            @csrf
             <div class="form-search">
-                <input id="search" name="keyword" class="input-text" value="" placeholder="" type="search">
+                <input id="search" name="keyword" class="input-text" type="search">
                 <button>
                     <i class="fa fa-search"></i>
                 </button>
