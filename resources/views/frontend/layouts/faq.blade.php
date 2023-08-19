@@ -3,7 +3,7 @@
         <div class="content">
             <div class="row">
                 <div class="col-12">
-                    <div class="what-is-included mt-0">
+                    <div class="what-is-included mt-3">
                         <div class="faq-accordion yellow-color">
                             <div id="accordion">
                                 @foreach($faqs as $faqKey => $faq)

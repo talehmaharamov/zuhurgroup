@@ -2662,6 +2662,16 @@ ul.header-info li .inner .content > .text-lev2 {
     }
 }
 
+.blog-content p {
+    max-height: 84px;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+.slick-track {
+    height: max-content !important;
+}
+
 @media only screen and (max-width: 767px) {
     .header-cart .shopping-cart {
         width: min-content;
@@ -12076,10 +12086,7 @@ a.read-more-btn:hover i {
         width: 32% !important;
     }
 
-    .slick-track {
-        height: 350px !important;
 
-    }
 
     .slick-track img {
         height: 100%;
@@ -12092,6 +12099,15 @@ a.read-more-btn:hover i {
     margin-right: 5px !important;
 }
 
+.brand img {
+    height:  150px !important;
+}
+
 .header-search {
     margin-right: 30px !important;
+}
+
+.service-gallery  .slick-track {
+    height: 350px !important;
+
 }

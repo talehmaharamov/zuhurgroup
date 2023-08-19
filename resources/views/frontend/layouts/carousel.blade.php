@@ -1,6 +1,6 @@
 @foreach($carouselCategories as $cC)
     <div
-        class="blog-grid-carousel-section section bg-gray pt-40 pt-lg-30 pt-md-20 pt-sm-10 pt-xs-0 pb-40 pb-lg-30 pb-md-20 pb-sm-10 pb-xs-0">
+        class="blog-grid-carousel-section section bg-gray pt-40 pt-lg-30 pt-md-20 pt-sm-10 pt-xs-0  pb-5">
         <div class="container">
             <div class="blog-carousel-active row">
                 @foreach($cC->content as $cContent)
