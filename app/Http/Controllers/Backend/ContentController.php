@@ -77,6 +77,7 @@ class ContentController extends Controller
 
     public function update(Request $request, string $id)
     {
+        dd($request->all());
         check_permission('content edit');
         try {
             $content = Content::where('id', $id)->with('photos')->first();
@@ -105,10 +106,10 @@ class ContentController extends Controller
                 foreach (active_langs() as $lang) {
                     $content->translate($lang->code)->name = $request->name[$lang->code];
                     $content->translate($lang->code)->content = $request->content1[$lang->code];
-                    $content->meta_title = $request->meta_title[$lang->code];
-                    $content->short_description = $request->short_description[$lang->code];
-                    $content->meta_description = $request->meta_description[$lang->code];
-                    $content->alt = $request->alt[$lang->code];
+                    $content->translate($lang->code)->meta_title = $request->meta_title[$lang->code];
+                    $content->translate($lang->code)->short_description = $request->short_description[$lang->code];
+                    $content->translate($lang->code)->meta_description = $request->meta_description[$lang->code];
+                    $content->translate($lang->code)->alt = $request->alt[$lang->code];
                 }
                 $content->save();
             });
