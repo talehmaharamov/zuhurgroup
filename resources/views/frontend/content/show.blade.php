@@ -29,10 +29,10 @@
                 <div style='padding:0 !important'  class="col-lg-12">
                     <div class="service-detail">
                         <div style='height:400px' class="service-gallery mb-35">
-                            <div class="item"><img style='height:400px'  src="{{ asset($content->photo)  }}"
+                            <div class="item"><img style='height:400px; object-fit:contain'  src="{{ asset($content->photo)  }}"
                                                    alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}"></div>
                             @foreach($content->photos as $photo)
-                                <div class="item"><img style='height:400px' src="{{ asset($photo->photo) }}"
+                                <div class="item"><img style='height:400px; object-fit:contain' src="{{ asset($photo->photo) }}"
                                                        alt="{{ $content->translate(app()->getLocale())->alt ?? '' }}">
                                 </div>
                             @endforeach
