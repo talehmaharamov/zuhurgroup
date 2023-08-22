@@ -12099,6 +12099,10 @@ a.read-more-btn:hover i {
     margin-right: 5px !important;
 }
 
+.single-blog {
+    height: 500px !important;
+}
+
 .brand img {
     height:  150px !important;
 }
