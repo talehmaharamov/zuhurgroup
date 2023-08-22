@@ -48,7 +48,7 @@
                                 @if($relatedContents !== null)
                                     <div class="col-12">
                                         <div class="sample-project">
-                                            <h2>Sample projects</h2>
+                                            <h2>@lang('backend.sample')</h2>
                                             <div class="row">
                                                 <div class="project-slider project-slider-3-column section">
                                                     @foreach($relatedContents as $rc)
@@ -71,13 +71,6 @@
                                         </div>
                                     </div>
                                 @endif
-
-                                <div class="col-12">
-                                    <div class="call-to-action-content mt-0 mb-0">
-                                        <h3>Need a high quality constructor for your project?</h3>
-                                        <a href="#" class="btn  white-btn">Get a quote</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

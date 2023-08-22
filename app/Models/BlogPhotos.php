@@ -7,9 +7,9 @@ use Spatie\Activitylog\LogOptions;
 
 class BlogPhotos extends Model
 {
-    public function blog()
+    public function blog(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        $this->belongsTo(Blog::class);
+        return $this->belongsTo(Blog::class);
     }
     protected $guarded = [];
     public $timestamps = [];

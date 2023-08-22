@@ -13,10 +13,10 @@ class Blog extends Model implements TranslatableContract
 {
     use Translatable, LogsActivity;
 
-    public $translatedAttributes = ['name'];
+    public array $translatedAttributes = ['name', 'description', 'alt', 'meta_title', 'meta_description'];
     protected $guarded = [];
 
-    public function photos()
+    public function photos(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(BlogPhotos::class);
     }
