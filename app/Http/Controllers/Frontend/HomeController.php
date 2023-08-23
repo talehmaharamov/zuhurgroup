@@ -11,6 +11,7 @@ use App\Models\Slider;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Spatie\Sitemap\SitemapGenerator;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,7 @@ class HomeController extends Controller
             ->has('content', '>=', 3)
             ->get();
         return view('frontend.index', get_defined_vars());
+
     }
 
     public function search(Request $request)

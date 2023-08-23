@@ -38,6 +38,9 @@ class BlogController extends Controller
                 $translation->locale = $lang->code;
                 $translation->blog_id = $blog->id;
                 $translation->name = $request->name[$lang->code];
+                $translation->meta_title = $request->meta_title[$lang->code];
+                $translation->meta_description = $request->meta_description[$lang->code];
+                $translation->alt = $request->alt[$lang->code];
                 $translation->description = $request->description[$lang->code];
                 $translation->save();
             }
@@ -84,6 +87,9 @@ class BlogController extends Controller
                 }
                 foreach (active_langs() as $lang) {
                     $blog->translate($lang->code)->name = $request->name[$lang->code];
+                    $blog->translate($lang->code)->meta_title = $request->meta_title[$lang->code];
+                    $blog->translate($lang->code)->meta_description = $request->meta_description[$lang->code];
+                    $blog->translate($lang->code)->alt = $request->alt[$lang->code];
                     $blog->translate($lang->code)->description = $request->description[$lang->code];
                 }
                 $blog->save();
