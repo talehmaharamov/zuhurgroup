@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="video-left-img">
-                            <img style='max-height:600px' class="w-100" src="{{asset($about->photo)}}"
+                            <img style='height:400px' class="w-100" src="{{asset($about->photo)}}"
                                  alt="{{$about->translate(app()->getLocale())->alt ?? __('backend.translation-not-found')}}">
                         </div>
                     </div>

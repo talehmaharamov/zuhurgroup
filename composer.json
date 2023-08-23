@@ -19,7 +19,8 @@
         "realrashid/sweet-alert": "*",
         "spatie/laravel-activitylog": "^4.7",
         "spatie/laravel-analytics": "*",
-        "spatie/laravel-permission": "*"
+        "spatie/laravel-permission": "*",
+        "spatie/laravel-sitemap": "^6.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

@@ -131,6 +131,14 @@
                         </a>
                     </li>
                 @endcan
+                @can('dodenv index')
+                    <li>
+                        <a target="_blank" href="{{ url('admin/generate-sitemap') }}" class="waves-effect">
+                            <i class="fas fa-sitemap"></i>
+                            <span>@lang('backend.generate-sitemap')</span>
+                        </a>
+                    </li>
+                @endcan
                 @can('languages index')
                     <li>
                         <a target="_blank" href="{{ url('admin/manage-languages') }}" class="waves-effect">

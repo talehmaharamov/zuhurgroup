@@ -186,4 +186,5 @@
   'your-item-number' => 'Номер вашего объявления',
   'zuhur' => 'Зухур Групп',
   'search-placeholder' => 'Нажмите Enter для поиска или ESC, чтобы закрыть',
+  'generate-sitemap' => 'Генерация карты сайта',
 );
