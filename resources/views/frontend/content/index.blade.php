@@ -1,5 +1,5 @@
 @extends('master.frontend')
-@section('title',$category->translate(app()->getLocale())->meta_title ?? " ".' | ')
+@section('title',$category->translate(app()->getLocale())->meta_title ?? " ")
 @section('meta')
     <meta name="description" content="{{ $category->translate(app()->getLocale())->meta_description ?? '' }}">
 @endsection

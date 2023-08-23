@@ -1,5 +1,5 @@
 @extends('master.frontend')
-@section('title',__('title.about').' | ')
+@section('title',__('title.about'))
 @section('front')
     @foreach($abouts as $about)
         <div class="video-section section ">

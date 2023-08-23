@@ -26,12 +26,12 @@
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>https://zuhurgroup.az/about</loc>
+        <loc>https://zuhurgroup.az/categories/repair-and-construction</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>https://zuhurgroup.az/categories/repair-and-design</loc>
+        <loc>https://zuhurgroup.az/about</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
@@ -41,7 +41,12 @@
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>https://zuhurgroup.az/categories/repair-and-construction</loc>
+        <loc>https://zuhurgroup.az/categories/cleaning-service</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://zuhurgroup.az/categories/repair-and-design</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
@@ -51,17 +56,7 @@
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>https://zuhurgroup.az/categories/cleaning-service</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
         <loc>https://zuhurgroup.az/c/kitchen-renovation-and-design</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://zuhurgroup.az/c/white-kitchen-design-and-renovation</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
@@ -72,6 +67,11 @@
             </url>
     <url>
         <loc>https://zuhurgroup.az/c/bedroom-design-and-renovation</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://zuhurgroup.az/c/white-kitchen-design-and-renovation</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
