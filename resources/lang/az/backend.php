@@ -1,4 +1,6 @@
-<?php return array (
+<?php
+
+return array (
   'about' => 'Haqqımızda',
   'actions' => 'Hərəkətlər',
   'active' => 'Aktiv',
@@ -97,6 +99,7 @@
   'gefen' => 'Gefen',
   'gefen-company' => 'GEFEN Company',
   'general' => 'Ümumi',
+  'generate-sitemap' => 'Sitemap generasiya',
   'give-permission' => 'İcazələrin verilməsi',
   'given-date' => 'Verilmə tarixi',
   'go-to-back' => 'Geriyə',
@@ -174,8 +177,10 @@
   'reply' => 'Cavab verin',
   'report' => 'Hesabat',
   'salary' => 'Maaş',
+  'sample' => 'Oxşar məhsullar',
   'save' => 'Yadda saxla',
   'search' => 'Axtarış...',
+  'search-placeholder' => 'Axtarmaq üçün enter düyməsini və ya bağlamaq üçün ESC düyməsini basın',
   'search-result' => 'Axtarış nəticəsi',
   'security' => 'Təhlükəsizlik',
   'see-all' => 'Hamısına bax',
@@ -238,6 +243,4 @@
   'your-item-message' => 'Elanınız nəzərdən keçirilməsini gözləyir.Elanı redaktə etmək və silmək üçün elanın nömrəsini yadda saxlayın.',
   'your-item-number' => 'Elanınızın nömrəsi',
   'zuhur' => 'Zühur Group',
-  'search-placeholder' => 'Axtarmaq üçün enter düyməsini və ya bağlamaq üçün ESC düyməsini basın',
-  'generate-sitemap' => 'Sitemap generasiya',
 );

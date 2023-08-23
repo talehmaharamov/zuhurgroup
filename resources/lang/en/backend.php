@@ -1,4 +1,6 @@
-<?php return array (
+<?php
+
+return array (
   'about' => 'About',
   'actions' => 'Actions',
   'active' => 'Active',
@@ -97,6 +99,7 @@
   'gefen' => 'Gefen',
   'gefen-company' => 'GEFEN Company',
   'general' => 'General',
+  'generate-sitemap' => 'Sitemap generation',
   'give-permission' => 'Give Permissions',
   'given-date' => 'Given Date',
   'go-to-back' => 'Go Back',
@@ -174,8 +177,10 @@
   'reply' => 'Reply',
   'report' => 'Report',
   'salary' => 'Salary',
+  'sample' => 'Similar products',
   'save' => 'Save',
   'search' => 'Search...',
+  'search-placeholder' => 'Hit enter to search or ESC to close',
   'search-result' => 'Search Result',
   'security' => 'Security',
   'see-all' => 'See All',
@@ -239,6 +244,4 @@
   'your-item-message' => 'Your item is awaiting review. Please save the item number to edit or delete the listing.',
   'your-item-number' => 'Your item number',
   'zuhur' => 'Zuhur Group',
-  'search-placeholder' => 'Hit enter to search or ESC to close',
-  'generate-sitemap' => 'Sitemap generation',
 );

@@ -77,7 +77,6 @@ class ContentController extends Controller
 
     public function update(Request $request, string $id)
     {
-        dd($request->all());
         check_permission('content edit');
         try {
             $content = Content::where('id', $id)->with('photos')->first();
