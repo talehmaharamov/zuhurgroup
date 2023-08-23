@@ -239,4 +239,5 @@
   'your-item-number' => 'Elanınızın nömrəsi',
   'zuhur' => 'Zühur Group',
   'search-placeholder' => 'Axtarmaq üçün enter düyməsini və ya bağlamaq üçün ESC düyməsini basın',
+  'generate-sitemap' => 'Sitemap generasiya',
 );
