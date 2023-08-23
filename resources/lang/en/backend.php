@@ -240,4 +240,5 @@
   'your-item-number' => 'Your item number',
   'zuhur' => 'Zuhur Group',
   'search-placeholder' => 'Hit enter to search or ESC to close',
+  'generate-sitemap' => 'Sitemap generation',
 );
