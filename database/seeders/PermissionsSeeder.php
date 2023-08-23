@@ -18,7 +18,6 @@ class PermissionsSeeder extends Seeder
             'permissions',
             'report',
             'dodenv',
-            'news',
             'blog',
             'partner',
             'faq',

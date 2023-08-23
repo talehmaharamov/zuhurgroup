@@ -45,6 +45,7 @@
     41 => 'Spatie\\Analytics\\AnalyticsServiceProvider',
     42 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
     43 => 'Spatie\\Permission\\PermissionServiceProvider',
+<<<<<<< HEAD
     44 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     45 => 'Intervention\\Image\\ImageServiceProvider',
     46 => 'Brotzka\\DotenvEditor\\DotenvEditorServiceProvider',
@@ -58,6 +59,20 @@
     54 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
     55 => 'Spatie\\Analytics\\AnalyticsServiceProvider',
     56 => 'Laravolt\\Avatar\\ServiceProvider',
+=======
+    44 => 'Intervention\\Image\\ImageServiceProvider',
+    45 => 'Brotzka\\DotenvEditor\\DotenvEditorServiceProvider',
+    46 => 'App\\Providers\\AppServiceProvider',
+    47 => 'App\\Providers\\AuthServiceProvider',
+    48 => 'App\\Providers\\EventServiceProvider',
+    49 => 'App\\Providers\\RouteServiceProvider',
+    50 => 'App\\Providers\\FortifyServiceProvider',
+    51 => 'App\\Providers\\JetstreamServiceProvider',
+    52 => 'Spatie\\Permission\\PermissionServiceProvider',
+    53 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    54 => 'Spatie\\Analytics\\AnalyticsServiceProvider',
+    55 => 'Laravolt\\Avatar\\ServiceProvider',
+>>>>>>> ee527e69afe156d9690dd73c66fac664bf9b36a4
   ),
   'eager' => 
   array (
@@ -90,6 +105,7 @@
     26 => 'Spatie\\Analytics\\AnalyticsServiceProvider',
     27 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
     28 => 'Spatie\\Permission\\PermissionServiceProvider',
+<<<<<<< HEAD
     29 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     30 => 'Intervention\\Image\\ImageServiceProvider',
     31 => 'Brotzka\\DotenvEditor\\DotenvEditorServiceProvider',
@@ -103,6 +119,20 @@
     39 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
     40 => 'Spatie\\Analytics\\AnalyticsServiceProvider',
     41 => 'Laravolt\\Avatar\\ServiceProvider',
+=======
+    29 => 'Intervention\\Image\\ImageServiceProvider',
+    30 => 'Brotzka\\DotenvEditor\\DotenvEditorServiceProvider',
+    31 => 'App\\Providers\\AppServiceProvider',
+    32 => 'App\\Providers\\AuthServiceProvider',
+    33 => 'App\\Providers\\EventServiceProvider',
+    34 => 'App\\Providers\\RouteServiceProvider',
+    35 => 'App\\Providers\\FortifyServiceProvider',
+    36 => 'App\\Providers\\JetstreamServiceProvider',
+    37 => 'Spatie\\Permission\\PermissionServiceProvider',
+    38 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    39 => 'Spatie\\Analytics\\AnalyticsServiceProvider',
+    40 => 'Laravolt\\Avatar\\ServiceProvider',
+>>>>>>> ee527e69afe156d9690dd73c66fac664bf9b36a4
   ),
   'deferred' => 
   array (

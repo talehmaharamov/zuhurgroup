@@ -179,6 +179,7 @@
       0 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
   ),
+<<<<<<< HEAD
   'spatie/laravel-sitemap' => 
   array (
     'providers' => 
@@ -186,4 +187,6 @@
       0 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     ),
   ),
+=======
+>>>>>>> ee527e69afe156d9690dd73c66fac664bf9b36a4
 );
