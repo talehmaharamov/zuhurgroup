@@ -13,6 +13,9 @@ return new class extends Migration {
             $table->string('locale')->index();
             $table->longText('name');
             $table->longText('description');
+            $table->longText('meta_title');
+            $table->longText('meta_description');
+            $table->longText('alt');
             $table->unique(['blog_id', 'locale']);
             $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade');
             $table->timestamps();
