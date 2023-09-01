@@ -7,7 +7,7 @@
 <div class="whats-float1">
     <a href="{{ settings('instagram') }}"
        target="_blank">
-        <i class="fa fa-instagram"></i><span>@lang('Instagram')<br><small>{{ str_replace('https://instagram.com/','@',settings('instagram')) }}</small></span>
+        <i class="fa fa-instagram"></i><span>@lang('Instagram')<br><small>{{ str_replace('https://www.instagram.com/','@',settings('instagram')) }}</small></span>
     </a>
 </div>
 <header class="header header-transparent header-sticky d-none d-lg-block">
@@ -142,6 +142,11 @@
                                     </ul>
                                 </li>
                             @endforeach
+                            <li class="@if(\Illuminate\Support\Facades\Route::currentRouteName() == 'frontend.about') active @endif">
+                                <a href="{{ route('frontend.about') }}"><span>@lang('backend.about')</span></a></li>
+                            <li class="@if(\Illuminate\Support\Facades\Route::currentRouteName() == 'frontend.contact-us-page') active @endif">
+                                <a href="{{ route('frontend.contact-us-page') }}"><span>@lang('backend.contact-us')</span></a>
+                            </li>
                         </ul>
                     </nav>
                     <div class="header-cart">
