@@ -19,8 +19,8 @@
                     <div class="item">
                         <img style="position: relative;max-height: 500px; object-fit:fill"
                              src="{{ asset($slider->photo) }}" alt="">
-                        <span
-                            style="position: absolute;left: 10%;top: 50%;transform: translateY(-50%);color: white;font-size: 30px;">{{ $slider->translate(app()->getLocale())->title ?? '' }}</span>
+{{--                        <span--}}
+{{--                            style="position: absolute;left: 10%;top: 50%;transform: translateY(-50%);color: white;font-size: 30px;">{{ $slider->translate(app()->getLocale())->title ?? '' }}</span>--}}
                     </div>
                 @endforeach
             </div>
